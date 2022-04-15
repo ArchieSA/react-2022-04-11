@@ -7,7 +7,7 @@ export const Restaurant = ({ restaurant: { name, reviews, menu } }) => {
     <div className="restaurant-overview">
       <h2 className="name">{name}</h2>
       
-      <Rate rating={reviews.reduce((prev, curr) => prev + curr.rating, 0) / 2} />
+      <Rate rating={reviews.reduce((prev, curr) => prev + curr.rating, 0) / reviews.length} />
       
       <Menu menu={menu} />
 
