@@ -17,3 +17,5 @@ root.render(
 // to log results (for example: reportWebVitals(console.log))
 // or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
 reportWebVitals();
+
+// git add . && git commit -m "home work 1" && git push -u origin home-work-1
