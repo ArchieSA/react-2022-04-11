@@ -1,3 +1,3 @@
-export const Product = ({ product }) => {
-  return <div>{product.name}</div>;
-};
+ export const Product = ({ product }) => {
+   return <div>{product.name}</div>;
+ };
