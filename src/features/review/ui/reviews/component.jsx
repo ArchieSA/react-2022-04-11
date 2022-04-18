@@ -1,6 +1,6 @@
 import React from 'react';
-import {Rate} from '../../../rate/ui/rate/component';
-import './style.scss'; 
+import { Review } from '../review/component';
+
 const getAverage = (data)=>{
     const allRates = data.reduce((acc, item)=> acc+=item.rating, 0);
     return allRates / data.length;
@@ -13,14 +13,7 @@ const getAverage = (data)=>{
         <div> Average rating: {getAverage(reviews)}</div>
         <ul>
             {
-            reviews.map(review => (
-                    <li key={review.id} className="reviews">
-                        <span>{review.user} : </span>
-                        <span>{review.text}</span>
-                        <Rate value={review.rating}/>
-                    </li>
-                    )
-            )
+            reviews.map(review => <Review review={review}/>)
             }
         </ul> 
         </React.Fragment>
