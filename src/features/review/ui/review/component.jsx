@@ -1,10 +1,11 @@
+import { Rate } from "../../../rate/ui/rate/component";
 
 
 export const Review = ({ review }) => {
   return (
 	  <article>
 		  
-		  	<p>{ review.rating }</p>
+		  	<Rate value={review.rating}></Rate>
 			<p>{ review.text }</p>
 		  	<p>{ review.user }</p>
 		  

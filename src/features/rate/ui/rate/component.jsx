@@ -1,10 +1,9 @@
 
-export const Rate = ({ ratings }) => {
+export const Rate = (props) => {
 
-	const averageRating = ratings?.reduce((r, i) => r + i.rating, 0) / ratings?.length;
 	
 	return (
 
-			<p>{averageRating.toFixed(1)}</p>	
+		<p>{props.value}</p>	
   );
 };
