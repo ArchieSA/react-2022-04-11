@@ -1,19 +1,20 @@
+import { useMemo } from "react";
 import { Menu } from "../../../menu/ui/menu/component";
 import { Rate } from "../../../rate/ui/rate/component";
 import { Reviews } from "../../../review/ui/reviews/component";
 
-export const Restaurant = ({ restaurant }) => {
-  const restaurantRate = Math.ceil(
-    restaurant.reviews.reduce((prev, curr) => prev + curr.rating, 0) /
-      restaurant.reviews.length
-  );
+export const Restaurant = ({ name, menu, reviews }) => {
+  const average = useMemo(() => {
+    const total = reviews.reduce((sum, { rating }) => sum + rating, 0);
+    return Math.round(total / reviews.length);
+  }, [reviews]);
 
   return (
     <div>
-      <span>{restaurant.name}</span>
-      <Rate value={restaurantRate} />
-      <Menu menu={restaurant.menu} />
-      <Reviews reviews={restaurant.reviews} />
+      <span>{name}</span>
+      <Rate rate={average} />
+      <Menu menu={menu} />
+      <Reviews reviews={reviews} />
     </div>
   );
 };
