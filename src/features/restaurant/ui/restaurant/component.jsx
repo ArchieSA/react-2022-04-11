@@ -10,7 +10,7 @@ export const Restaurant = ({ restaurant }) => {
     <div>
       <span>Restaurant: {restaurant.name}</span>
       <hr/>
-      Average Rating: {<Rate rate={averageRate}/>}
+      Average Rating: <Rate rate={averageRate}/>
       <div>Menu:</div> <Menu menu={restaurant.menu} />
       <hr/>
       <div>Reviews:</div> <Reviews reviews={reviews}/>
