@@ -1,3 +1,3 @@
 export const Rate = ({ rating }) => (
-  <div className="rating">{ Math.ceil(rating) }</div>
+  <div className="rating">{ rating }</div>
 );
