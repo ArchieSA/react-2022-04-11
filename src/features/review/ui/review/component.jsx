@@ -1,10 +1,13 @@
-import React from "react";
 import { Rate } from "../../../rate/ui/rate/component";
 
-export const Review = ({ user, text, rating }) => (
-  <div>
-    <span>Author: {user}</span>
-    <span>{text}</span>
-    <Rate value={rating}></Rate>
-  </div>
-);
+export const Review = ({ user, text, rating }) => {
+  return (
+    <>
+      <div>User: {user}</div>
+
+      <div>Text: {text}</div>
+      <Rate rate={rating} />
+      <hr />
+    </>
+  );
+};

@@ -1,1 +1,3 @@
-export const Rate = ({ value }) => <span>{value}</span>;
+export const Rate = ({ rate }) => {
+  return <div>{rate}</div>;
+};
