@@ -1,0 +1,26 @@
+.product {
+  display: flex;
+}
+
+.actions {
+  padding: 0 20px 0;
+}
+
+.action {
+  width: 30px;
+  height: 30px;
+  background-size: contain;
+  padding: 0;
+}
+
+.action:not(:last-child) {
+  margin-right: 10px;
+}
+.action:not(:first-child) {
+   margin-left: 10px;
+}
+
+.icon {
+  width: 20px;
+  height: 20px;
+}
