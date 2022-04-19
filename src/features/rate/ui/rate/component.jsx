@@ -1,9 +1,2 @@
 
-export const Rate = (props) => {
-
-	
-	return (
-
-		<p>{props.value}</p>	
-  );
-};
+export const Rate = ({value}) => <p>{value}</p>;

@@ -19,7 +19,7 @@ export const Restaurant = ({ restaurant }) => {
   return (
     <div>
 		  <span>{restaurant.name}</span>
-		  <Rate value={calculateAverageRating()} ratings={restaurant.reviews} />
+		  <Rate value={calculateAverageRating()} />
 		  <Menu menu={restaurant.menu} />
 		  <Reviews reviews={restaurant.reviews} />
     </div>
