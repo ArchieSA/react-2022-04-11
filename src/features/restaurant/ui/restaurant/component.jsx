@@ -5,7 +5,7 @@ import { NewReview } from "../../../review/ui/new-review/new-review";
 
 export const Restaurant = ({ restaurant }) => {
   const restaurantRate = Math.ceil(
-    restaurant.reviews.reduce((prev, curr) => prev + curr.rating, 0) /
+      restaurant.reviews.reduce((prev, curr) => prev + curr.rating, 0) /
       restaurant.reviews.length
   );
 
