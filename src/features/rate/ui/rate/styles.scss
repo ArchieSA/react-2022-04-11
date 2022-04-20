@@ -1,0 +1,12 @@
+.star{
+    max-width: 24px;
+    max-height: 24px;
+    path {
+        fill: rgb(185, 184, 182);
+    }
+    &--active{
+        path {
+            fill: rgb(245, 204, 19);
+        }
+}
+}
