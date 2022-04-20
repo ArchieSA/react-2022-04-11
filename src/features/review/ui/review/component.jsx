@@ -1,3 +1,4 @@
+
 import React from "react";
 import { Rate } from "../../../rate/ui/rate/component";
 
