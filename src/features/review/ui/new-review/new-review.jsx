@@ -1,4 +1,5 @@
 import { useReducer } from "react";
+import { SetRate } from "../../../rate/ui/set-rate/component";
 
 const reducer = (state, action) => {
   switch (action.type) {
@@ -37,6 +38,7 @@ export const NewReview = () => {
           }}
         />
       </div>
+      <SetRate />
     </div>
   );
 };

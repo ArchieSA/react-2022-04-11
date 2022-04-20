@@ -1,0 +1,71 @@
+.visuallyHidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  -webkit-clip-path: inset(100%);
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+.rating {}
+
+.reviews__rating {
+  margin-bottom: 7px;
+}
+
+// Stars
+
+.rating__stars {
+  position: relative;
+  display: block;
+  font-size: 0;
+}
+
+.rating__stars::before {
+  content: "";
+  display: inline-block;
+  height: 100%;
+  background: url(../icons/stars.svg) transparent no-repeat center;
+}
+
+.rating__stars span {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: inline-block;
+  height: 100%;
+  overflow: hidden;
+}
+
+.rating__stars span::before {
+  content: "";
+  display: inline-block;
+  height: 100%;
+  background: url(../icons/stars-active.svg) transparent no-repeat center;
+}
+
+// Review stars
+
+.reviews__stars {
+  width: 98px;
+  height: 16px;
+}
+
+.reviews__stars::before {
+  width: 98px;
+  background-size: 98px 16px;
+}
+
+.reviews__stars span {
+  width: 0%;
+}
+
+.reviews__stars span::before {
+  width: 98px;
+  background-size: 98px 16px;
+}

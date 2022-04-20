@@ -1,0 +1,69 @@
+.visuallyHidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  -webkit-clip-path: inset(100%);
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+// Form
+.form {
+  margin-bottom: 21px;
+}
+
+.formRating {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: reverse;
+  -ms-flex-direction: row-reverse;
+  flex-direction: row-reverse;
+  -webkit-box-pack: end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+  -webkit-box-align: start;
+  -ms-flex-align: start;
+  align-items: flex-start;
+}
+
+// Select
+.reviews__star {
+  padding-left: 15px;
+  background-image: url(../icons/star-active.svg);
+  background-size: 12px 11px;
+  background-repeat: no-repeat;
+}
+.reviews__ratingLabel {
+
+}
+.ratingLabel {
+  display: block;
+  width: 37px;
+  height: 33px;
+  margin-right: 4px;
+  cursor: pointer;
+}
+
+.ratingLabel:first-child {
+  margin-right: 0;
+}
+
+.ratingInput:checked~.ratingLabel .starImage,
+.ratingInput:focus~.ratingLabel .starImage,
+.ratingLabel:hover .starImage,
+.ratingLabel:hover~.ratingLabel .starImage {
+  fill: #ff9000;
+}
+
+.starImage {
+  fill: #c7c7c7;
+  -webkit-transition: fill 0.3s;
+  transition: fill 0.3s;
+}
