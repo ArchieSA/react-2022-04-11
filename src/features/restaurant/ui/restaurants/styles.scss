@@ -1,0 +1,19 @@
+.content{
+    padding: 20px;
+}
+.tabs{
+    margin-bottom: 20px;
+}
+.tab{
+    padding: 5px 10px;
+    border-radius: 4px;
+    background-color: azure;
+    outline: none;
+    cursor: pointer;
+    & + .tab{
+        margin-left: 10px;
+    }
+}
+.active{
+    background-color: aqua;
+}
