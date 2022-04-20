@@ -40,3 +40,4 @@ export const Rate = ({ value, isEditable = false, changeRate = null }) => {
     </span>
   );
 };
+
