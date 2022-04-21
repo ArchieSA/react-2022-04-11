@@ -2,14 +2,15 @@ import { Restaurant } from "../restaurant/component";
 import { useState} from "react";
 import './styles.scss'
 export const Restaurants = ({ restaurants }) => {
-  const [active, setActive] = useState(0);
-  const findRest = (id) => restaurants.findIndex(el=>el.id === id);
+  const [activeID, setActive] = useState(()=>restaurants[0].id);
+  const active = restaurants.findIndex(el=>el.id === activeID);
+  
 
   const tabs = restaurants.map(el=>
   <button 
-    key={el.id} 
-    onClick={()=>setActive(findRest(el.id))}
-    className={active === findRest(el.id)? 'active tab':'tab'}>
+    key={el.id}
+    onClick={()=>setActive(el.id)}
+    className={activeID === el.id ? 'active tab':'tab'}>
     {el.name}
     </button>);
 
