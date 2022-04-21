@@ -1,0 +1,21 @@
+.product {
+  display: flex;
+}
+
+.actions {
+  padding: 20px;
+}
+
+.action {
+  padding: 5px;
+}
+
+ .action:not(:last-child) {
+  margin-right: 10px;
+} 
+
+.action:not(:first-child) {
+   margin-left: 10px;
+}
+
+
