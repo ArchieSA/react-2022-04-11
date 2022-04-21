@@ -12,28 +12,26 @@
   overflow: hidden;
 }
 
-.rating {}
-
-.reviews__rating {
-  margin-bottom: 7px;
+.root {
+  margin: 8px 0;
 }
 
 // Stars
 
-.rating__stars {
+.stars {
   position: relative;
   display: block;
   font-size: 0;
 }
 
-.rating__stars::before {
+.stars::before {
   content: "";
   display: inline-block;
   height: 100%;
   background: url(../icons/stars.svg) transparent no-repeat center;
 }
 
-.rating__stars span {
+.stars span {
   position: absolute;
   top: 0;
   left: 0;
@@ -42,7 +40,7 @@
   overflow: hidden;
 }
 
-.rating__stars span::before {
+.stars span::before {
   content: "";
   display: inline-block;
   height: 100%;
