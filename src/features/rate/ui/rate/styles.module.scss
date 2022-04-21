@@ -1,0 +1,14 @@
+.icon {
+  width: 20px;
+  height: 20px;
+  mask: url(./imgs/star.svg) no-repeat center / contain;
+  background-color: black;
+}
+
+.colored {
+  background-color: yellow;
+}
+
+.containerStars {
+  display: flex;
+}

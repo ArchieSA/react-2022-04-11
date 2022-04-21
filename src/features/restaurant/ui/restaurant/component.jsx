@@ -4,6 +4,10 @@ import { Reviews } from "../../../review/ui/reviews/component";
 import { NewReview } from "../../../review/ui/new-review/new-review";
 
 export const Restaurant = ({ restaurant }) => {
+  if (!restaurant) {
+    return null;
+  }
+
   const restaurantRate = Math.ceil(
     restaurant.reviews.reduce((prev, curr) => prev + curr.rating, 0) /
       restaurant.reviews.length
@@ -15,7 +19,7 @@ export const Restaurant = ({ restaurant }) => {
       <Rate value={restaurantRate} />
       <Menu menu={restaurant.menu} />
       <Reviews reviews={restaurant.reviews} />
-      <NewReview/>
+      <NewReview />
     </div>
   );
 };
