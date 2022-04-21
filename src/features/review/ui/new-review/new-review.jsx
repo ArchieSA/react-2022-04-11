@@ -3,9 +3,11 @@ import { useReducer } from "react";
 const reducer = (state, action) => {
   switch (action.type) {
     case "changeName":
-      return { name: action.payload, text: "" };
+      return { name: action.payload, text: "", rate: 5 };
     case "changeText":
       return { ...state, text: action.payload };
+    case "changeRate":
+      return { ...state, rate: action.payload };
     default:
       return state;
   }
@@ -15,6 +17,7 @@ export const NewReview = () => {
   const [state, dispatch] = useReducer(reducer, {
     name: "DefaultName",
     text: "text",
+    rate: 5,
   });
 
   return (
@@ -34,6 +37,18 @@ export const NewReview = () => {
           value={state.text}
           onChange={(event) => {
             dispatch({ type: "changeText", payload: event.target.value });
+          }}
+        />
+      </div>
+      <div>
+        <span>Rate</span>
+        <input
+          type="number"
+          min="1"
+          max="5"
+          value={state.rate}
+          onChange={(event) => {
+            dispatch({ type: "changeRate", payload: event.target.value });
           }}
         />
       </div>
