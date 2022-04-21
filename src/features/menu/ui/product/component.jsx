@@ -11,11 +11,11 @@ export const Product = ({ product }) => {
       <span>{product.name}</span>
       <div className={styles.actions}>
         <button onClick={() => {setCount(count - 1)}} className={styles.action}>
-          <img src={Minus} loading="lazy" className={styles.icon}/>
+          <img src={Minus} loading="lazy" alt="minus" className={styles.icon}/>
         </button>
         <span>{count}</span>
         <button onClick={() => {setCount(count + 1)}} className={styles.action}>
-          <img src={Plus} loading="lazy" className={styles.icon}/>
+          <img src={Plus} loading="lazy" alt="plus" className={styles.icon}/>
         </button>
       </div>
     </div>
