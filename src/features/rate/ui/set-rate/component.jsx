@@ -1,24 +1,22 @@
-import React, { useState } from 'react';
+import React from 'react';
 import cl from 'classnames';
 import s from './styles.module.scss';
 import { ReactComponent as StarActive } from '../icons/star-active.svg';
 import { ReactComponent as IconStar } from '../icons/icon-star.svg';
 
+
 const radioArray = [1, 2, 3, 4, 5];
 
+export const SetRate = ({ rate, onChange }) => {
 
-export const SetRate = ({ value }) => {
-
-  const [rating, setRaiting] = useState(0);
-
-  const handleClickRadio = (e) => {
-    console.log('handleClickRadio: ', +e.target.value);
-    setRaiting(+e.target.value);
+  const handleChange = (e) => {
+    onChange(+e.target.value);
   };
-
 
   return (
     <div className={s.root}>
+      <span className={s.title}>Rate</span>
+
       {
         radioArray.map((value) => (
           <React.Fragment key={`radio-${value}`}>
@@ -26,7 +24,7 @@ export const SetRate = ({ value }) => {
               className = {cl(s.input, s.visuallyHidden)}
               name      = "rating"
               value     = {value}
-              onClick   = {handleClickRadio}
+              onClick   = {handleChange}
               id        = {`${value}-stars`}
               type      = "radio"
             />
@@ -35,7 +33,7 @@ export const SetRate = ({ value }) => {
               className = {cl(s.ratingLabel, s.label)}
               title     = "perfect">
               {
-                (value <= rating) ?
+                (value <= rate) ?
                 <StarActive width="37" height="33"/> :
                   <IconStar width="37" height="33" />
               }

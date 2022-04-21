@@ -1,7 +1,7 @@
 import { Menu } from "../../../menu/ui/menu/component";
 import { Rate } from "../../../rate/ui/rate/component";
 import { Reviews } from "../../../review/ui/reviews/component";
-import { NewReview } from "../../../review/ui/new-review/new-review";
+import { NewReview } from "../../../review/ui/new-review/component";
 import s from './styles.module.scss';
 
 
