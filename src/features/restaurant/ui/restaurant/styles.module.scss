@@ -1,0 +1,37 @@
+.root {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 40px;
+}
+
+.mainInfo {
+  width: 100%;
+  height: 214px;
+  background: url('./img/banner.jpg') no-repeat center;
+  background-size: cover;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.restaurantName {
+  color: #fff;
+  font-size: 32px;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+
+.detailedInfo {
+  width: 50%;
+  min-width: 700px;
+  margin-top: 30px;
+  padding: 30px 20px;
+}
+
+.menu {
+  margin-bottom: 40px;
+}

@@ -1,12 +1,16 @@
 import { useReducer } from "react";
 import { SetRate } from "../../../rate/ui/set-rate/component";
 
+import styles from "./styles.module.scss";
+
 const reducer = (state, action) => {
   switch (action.type) {
     case "changeName":
-      return { name: action.payload, text: "" };
+      return { name: action.payload, text: "", rating: 0 };
     case "changeText":
       return { ...state, text: action.payload };
+    case "setRating":
+      return { ...state, rating: action.payload };
     default:
       return state;
   }
@@ -16,12 +20,14 @@ export const NewReview = () => {
   const [state, dispatch] = useReducer(reducer, {
     name: "DefaultName",
     text: "text",
+    rating: 0,
   });
 
   return (
-    <div>
-      <div>
-        <span>Name</span>
+    <div className={styles.root}>
+      <span className={styles.title}>Set Your review here!</span>
+      <div className={styles.formElement}>
+        <span className={styles.elementTitle}>Name</span>
         <input
           value={state.name}
           onChange={(event) => {
@@ -29,8 +35,8 @@ export const NewReview = () => {
           }}
         />
       </div>
-      <div>
-        <span>Review</span>
+      <div className={styles.formElement}>
+        <span className={styles.elementTitle}>Review</span>
         <input
           value={state.text}
           onChange={(event) => {
@@ -38,7 +44,15 @@ export const NewReview = () => {
           }}
         />
       </div>
-      <SetRate />
+      <div className={styles.formElement}>
+        <span className={styles.elementTitle}>Rating</span>
+        <input
+          value={state.rating}
+          onChange={(event) => {
+            dispatch({ type: "setRating", payload: event.target.value });
+          }}
+        />
+      </div>
     </div>
   );
 };
