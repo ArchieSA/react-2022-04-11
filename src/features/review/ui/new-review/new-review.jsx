@@ -1,11 +1,14 @@
 import { useReducer } from "react";
+import { Rate } from "../../../rate/ui/rate/component";
 
-const reducer = (state, action) => {
-  switch (action.type) {
+const reducer = (state, { type, payload }) => {
+  switch (type) {
     case "changeName":
-      return { name: action.payload, text: "" };
+      return { ...state, name: payload, text: "", rating: 5 };
     case "changeText":
-      return { ...state, text: action.payload };
+      return { ...state, text: payload };
+    case "changeRating":
+      return { ...state, rating: payload };
     default:
       return state;
   }
@@ -15,6 +18,7 @@ export const NewReview = () => {
   const [state, dispatch] = useReducer(reducer, {
     name: "DefaultName",
     text: "text",
+    rating: 5,
   });
 
   return (
@@ -36,6 +40,16 @@ export const NewReview = () => {
             dispatch({ type: "changeText", payload: event.target.value });
           }}
         />
+      </div>
+      <div>
+        Submit rating:
+        <input
+          value={state.rating}
+          onChange={(event) => {
+            dispatch({ type: "changeRating", payload: event.target.value });
+          }}
+        />
+        <Rate value={state.rating} />
       </div>
     </div>
   );

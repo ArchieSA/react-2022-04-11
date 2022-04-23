@@ -1,0 +1,27 @@
+.container {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.star {
+    svg {
+        width: 15px;
+        height: 15px;
+    }
+
+    &Grey {
+
+        path {
+            fill: #969892;
+        }
+    }
+
+    
+    &Highlite {
+        path {
+            fill: #b7dd29;
+        }
+    }
+}
