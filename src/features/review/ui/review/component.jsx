@@ -1,13 +1,16 @@
+import React from "react";
+import classnames from "classnames";
+
 import { Rate } from "../../../rate/ui/rate/component";
 
-export const Review = ({ user, text, rating }) => {
-  return (
-    <>
-      <div>User: {user}</div>
+import styles from "./styles.module.scss";
 
-      <div>Text: {text}</div>
-      <Rate rate={rating} />
-      <hr />
-    </>
-  );
-};
+export const Review = ({ user, text, rating, className }) => (
+  <div className={classnames(className, styles.root)}>
+    <div className={styles.header}>
+      <span className={styles.author}>{user}</span>
+      <Rate value={rating} size="small" />
+    </div>
+    <span>{text}</span>
+  </div>
+);

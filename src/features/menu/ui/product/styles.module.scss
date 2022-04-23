@@ -1,0 +1,42 @@
+.root {
+  display: flex;
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+}
+
+.action {
+  background-color: #fff;
+  border: 1px solid grey;
+  border-radius: 4px;
+  padding: 4px;
+  width: 30px;
+  height: 30px;
+  transition: 0.2s;
+
+  &:first-child {
+    margin-right: 10px;
+  }
+
+  &:last-child {
+    margin-left: 10px;
+  }
+
+
+  &:hover {
+    background-color: rgba(128, 128, 128, 0.1);
+    cursor: pointer;
+  }
+
+  &:disabled {
+    opacity: 0.5;
+  }
+}
+
+.count {
+  width: 19px;
+  text-align: center;
+}
