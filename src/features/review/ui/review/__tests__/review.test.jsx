@@ -3,7 +3,7 @@ import { Review } from '../component';
 
 
 describe('Test <Review />', () => {
-  it('should correct render ', () => {
+  it('should correct render', () => {
 
     render(<Review user="Genady" text="Feedback" rating="3" />);
 

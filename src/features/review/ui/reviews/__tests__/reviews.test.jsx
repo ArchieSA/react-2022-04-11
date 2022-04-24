@@ -3,7 +3,7 @@ import { Reviews } from '../component';
 import { reviews } from '../mocks';
 
 describe('Test <Reviews />', () => {
-  it('should correct render ', () => {
+  it('should correct render', () => {
     render(<Reviews reviews={reviews} />);
     expect(screen.getByText("No burgers again. But Chef Pizza is the best one")).toBeInTheDocument();
   });
