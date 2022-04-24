@@ -1,26 +1,42 @@
-.product {
+.root {
   display: flex;
 }
 
 .actions {
-  padding: 0 20px 0;
+  display: flex;
+  align-items: center;
+  margin-left: auto;
 }
 
 .action {
+  background-color: #fff;
+  border: 1px solid grey;
+  border-radius: 4px;
+  padding: 4px;
   width: 30px;
   height: 30px;
-  background-size: contain;
-  padding: 0;
+  transition: 0.2s;
+
+  &:first-child {
+    margin-right: 10px;
+  }
+
+  &:last-child {
+    margin-left: 10px;
+  }
+
+
+  &:hover {
+    background-color: rgba(128, 128, 128, 0.1);
+    cursor: pointer;
+  }
+
+  &:disabled {
+    opacity: 0.5;
+  }
 }
 
-.action:not(:last-child) {
-  margin-right: 10px;
-}
-.action:not(:first-child) {
-   margin-left: 10px;
-}
-
-.icon {
-  width: 20px;
-  height: 20px;
+.count {
+  width: 19px;
+  text-align: center;
 }
