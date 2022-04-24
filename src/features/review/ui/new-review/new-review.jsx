@@ -45,13 +45,9 @@ export const NewReview = () => {
         />
       </div>
       <div className={styles.formElement}>
-        <span className={styles.elementTitle}>Rating</span>
-        <input
-          value={state.rating}
-          onChange={(event) => {
-            dispatch({ type: "setRating", payload: event.target.value });
-          }}
-        />
+        <SetRate rating={state.rating} onChange={(value) => {
+            dispatch({ type: "setRating", payload: value });
+        }} />
       </div>
     </div>
   );
