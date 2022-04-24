@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import React from "react";
 import classnames from "classnames";
 
@@ -14,3 +15,6 @@ export const Review = ({ user, text, rating, className }) => (
     <span>{text}</span>
   </div>
 );
+=======
+
+>>>>>>> bd2ae2a8bd2c7584cc5177306733692f325c9a6a

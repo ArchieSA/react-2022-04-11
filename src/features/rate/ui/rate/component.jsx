@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import Star from "./img/star.svg";
 import GoldStar from "./img/star-gold.svg";
 
@@ -18,3 +19,6 @@ export const Rate = ({ value, size = "medium" }) => (
     ))}
   </div>
 );
+=======
+
+>>>>>>> bd2ae2a8bd2c7584cc5177306733692f325c9a6a
