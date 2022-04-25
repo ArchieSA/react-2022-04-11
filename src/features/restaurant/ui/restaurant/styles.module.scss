@@ -27,9 +27,21 @@
 
 .detailedInfo {
   width: 50%;
-  min-width: 700px;
+  min-width: 900px;
   margin-top: 30px;
   padding: 30px 20px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 50px;
+}
+
+.reviews {
+  grid-column: 1;
+}
+
+.basket {
+  grid-row: 1;
+  grid-column: 2;
 }
 
 .menu {
