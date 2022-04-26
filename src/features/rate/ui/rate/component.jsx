@@ -14,6 +14,7 @@ export const Rate = ({ value, size = "medium" }) => (
         src={index >= value ? Star : GoldStar}
         alt={index >= value ? "star" : "star-gold"}
         className={classnames(styles.star, styles[size])}
+        loading="lazy"
       />
     ))}
   </div>

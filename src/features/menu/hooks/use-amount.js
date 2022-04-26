@@ -1,7 +1,7 @@
 import { useCallback, useState } from "react";
 
-export const useAmount = (defaultValue) => {
-  const [count, setCount] = useState(defaultValue || 0);
+export const useAmount = (defaultValue = 0) => {
+  const [count, setCount] = useState(defaultValue);
 
   const decrement = useCallback(() => setCount(current => {
     return current > 0 ? current - 1 : 0;
