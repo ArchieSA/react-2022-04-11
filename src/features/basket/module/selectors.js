@@ -8,7 +8,7 @@ export const selectProductCount = (state, productId) => {
   return basket[productId] || 0;
 };
 
-export const selectProductInfo = (state, restaurant) => {
+export const selectProductInfo = (state) => {
   // было интересно сделать именно с ID, по этому вернул, не знаю на сколько нормальное решение
   const products = restaurants.flatMap((rest) => rest.menu);
   const basket = selectBasket(state);
@@ -25,10 +25,4 @@ export const selectProductInfo = (state, restaurant) => {
     });
 
   return productsInfo;
-};
-
-export const selectBasketInfo = (state, restaurant) => {
-  const basket = selectBasket(state);
-
-  return basket;
 };
