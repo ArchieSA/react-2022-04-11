@@ -1,7 +1,7 @@
 import classnames from "classnames";
 import styles from "./styles.module.scss";
 
-export const Basket = ({ className, products, reset }) => {
+export const Basket = ({ className, products, clickHandler }) => {
   
   return (
     <div className={classnames(styles.root, className)}>
@@ -17,7 +17,7 @@ export const Basket = ({ className, products, reset }) => {
             </li>
           ))}
       </ul>
-      <button onClick={reset}className={styles.btn}>Reset order</button>
+      <button onClick={clickHandler}className={styles.btn}>Reset order</button>
     </div>
   );
 };
