@@ -12,6 +12,7 @@ export const Rate = ({ value, size = "medium" }) => (
       <img
         key={index}
         src={index >= value ? Star : GoldStar}
+        key={index}
         className={classnames(styles.star, styles[size])}
         loading="lazy"
         alt="star rating"

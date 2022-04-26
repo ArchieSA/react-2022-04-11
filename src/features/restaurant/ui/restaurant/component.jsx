@@ -5,6 +5,7 @@ import { Reviews } from "../../../review/ui/reviews/component";
 import { NewReview } from "../../../review/ui/new-review/component";
 
 import styles from "./styles.module.scss";
+import { Basket } from "../../../basket/ui/basket/component";
 
 export const Restaurant = ({ restaurant }) => {
   const restaurantRate = useMemo(
@@ -24,8 +25,11 @@ export const Restaurant = ({ restaurant }) => {
       </div>
       <div className={styles.detailedInfo}>
         <Menu menu={restaurant.menu} className={styles.menu} />
-        <Reviews reviews={restaurant.reviews} />
-        <NewReview />
+        <div className={styles.reviews}>
+          <Reviews reviews={restaurant.reviews} />
+          <NewReview />
+        </div>
+        <Basket className={styles.basket} />
       </div>
     </div>
   );
