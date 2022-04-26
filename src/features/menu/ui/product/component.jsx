@@ -1,21 +1,20 @@
-import styles from './styles.module.scss';
-import Minus from './imgs/thumb-down.svg'
-import Plus from './imgs/thumb-up.svg'
-import { useState } from "react";
+import classnames from "classnames";
+import styles from "./styles.module.scss";
+import { useAmount } from "../../hooks/use-amount";
 
-export const Product = ({ product }) => {
-  let [count, setCount] = useState(0);
+export const Product = ({ productName, className }) => {
+  const { count, decrement, increment } = useAmount();
 
   return (
-    <div className={styles.product}>
-      <span>{product.name}</span>
+    <div className={classnames(styles.root, className)}>
+      <span>{productName}</span>
       <div className={styles.actions}>
-        <button onClick={() => {setCount(count - 1)}} className={styles.action}>
-          <img src={Minus} loading="lazy" className={styles.icon}/>
+        <button onClick={decrement} className={styles.action} disabled={count <= 0}>
+          -
         </button>
-        <span>{count}</span>
-        <button onClick={() => {setCount(count + 1)}} className={styles.action}>
-          <img src={Plus} loading="lazy" className={styles.icon}/>
+        <div className={styles.count}>{count}</div>
+        <button onClick={increment} className={styles.action} disabled={count >= 25}>
+          +
         </button>
       </div>
     </div>

@@ -1,30 +1,22 @@
 import { useState } from "react";
 import { Restaurant } from "../restaurant/component";
+import { Tabs } from "../../../tabs/ui/tabs/component";
 
 export const Restaurants = ({ restaurants }) => {
-  let [currentIndexOfRestraunt, setCurrentIndexOfRestraunt] = useState(0);
+  const [currentRestaurantId, setCurrentRestaurantId] = useState(restaurants[0]?.id);
+
+  if (!restaurants?.length) {
+    return null;
+  }
+
   return (
     <div>
-      <div>
-        {restaurants.map((restaurant, index) => {
-          return (
-            <div key={restaurant.id}>
-              <span>{restaurant.name}</span>
-              <span>
-                <button
-                  onClick={() => {
-                    setCurrentIndexOfRestraunt(index);
-                  }}
-                >
-                  Выбрать
-                </button>
-              </span>
-            </div>
-          );
-        })}
-      </div>
-      <hr />
-      <Restaurant restaurant={restaurants[currentIndexOfRestraunt]} />
+      <Tabs
+        tabs={restaurants.map(({ name, id }) => ({ label: name, id }))}
+        selectedId={currentRestaurantId}
+        onTabSelect={setCurrentRestaurantId}
+      />
+      <Restaurant restaurant={restaurants.find(({ id }) => id === currentRestaurantId)} />
     </div>
   );
 };

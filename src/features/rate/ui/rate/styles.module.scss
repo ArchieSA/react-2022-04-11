@@ -11,3 +11,21 @@
 .rate-img-active {
   filter: invert(50%) sepia(77%) saturate(1835%) hue-rotate(1deg) brightness(102%) contrast(107%);
 }
+
+.star {
+  height: 32px;
+
+  &.medium {
+    width: 32px;
+    height: 32px;
+  }
+
+  &.small {
+    width: 18px;
+    height: 18px;
+  }
+}
+
+.star:not(:last-child) {
+  margin-right: 5px;
+}
