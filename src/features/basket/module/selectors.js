@@ -5,3 +5,11 @@ export const selectProductCount = (state, productId) => {
 
   return basket[productId] || 0;
 };
+
+export const selectProducts = (state) => {
+  const basket = selectBasket(state);
+
+  if (!Object.keys(basket).length == 0) {
+    return basket;
+  }
+};
