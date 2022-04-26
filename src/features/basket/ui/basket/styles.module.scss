@@ -3,3 +3,13 @@
   border: 1px solid black;
   border-radius: 4px;
 }
+
+.clearBasket {
+  float: right;
+}
+
+.orderedFood {
+  display: grid;
+  gap: 8px;
+  margin: 48px 0;
+}
