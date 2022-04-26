@@ -14,5 +14,6 @@ export const removeProduct = (productId) => ({
 
 export const cancelOrder = () => ({
   type: CANCEL_ORDER,
+  // по сути payload нам не нужен, как практика считается лучше, оставить пустой строкой или просто удалять ?
   payload: "",
 });
