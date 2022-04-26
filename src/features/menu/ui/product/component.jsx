@@ -1,6 +1,6 @@
 import classnames from "classnames";
-import { useAmount } from "../../hooks/use-amount";
 import styles from "./styles.module.scss";
+
 
 export const Product = ({
   productName,

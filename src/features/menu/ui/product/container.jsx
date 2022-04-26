@@ -19,10 +19,10 @@ export const ProductContainer = ({ productName, ...props }) => {
   return (
     <Product
       {...props}
-      productName={productName}
-      count={count}
-      decrement={decrement}
-      increment={increment}
+      productName = {productName}
+      count       = {count}
+      decrement   = {decrement}
+      increment   = {increment}
     />
   );
 };

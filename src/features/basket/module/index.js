@@ -3,6 +3,7 @@ import { ADD_PRODUCT, REMOVE_PRODUCT } from "./actions";
 const initialState = {};
 
 export const basket = (state = initialState, action) => {
+  console.log('action: ', action);
   switch (action.type) {
     case ADD_PRODUCT:
       return {

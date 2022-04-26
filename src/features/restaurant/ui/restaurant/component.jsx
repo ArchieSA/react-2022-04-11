@@ -3,9 +3,9 @@ import { Menu } from "../../../menu/ui/menu/component";
 import { Rate } from "../../../rate/ui/rate/component";
 import { Reviews } from "../../../review/ui/reviews/component";
 import { NewReview } from "../../../review/ui/new-review/component";
+import { Basket } from "../../../basket/ui/basket/component";
 
 import styles from "./styles.module.scss";
-import { Basket } from "../../../basket/ui/basket/component";
 
 export const Restaurant = ({ restaurant }) => {
   const restaurantRate = useMemo(
