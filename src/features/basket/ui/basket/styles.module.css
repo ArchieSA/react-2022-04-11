@@ -1,0 +1,36 @@
+.root {
+  position: relative;
+  padding: 20px;
+  padding-bottom: 50px;
+  border: 1px solid black;
+  border-radius: 4px;
+  margin-bottom: 40px;
+}
+
+.item {
+  margin-top: 10px;
+  list-style-type: none;
+}
+
+.item div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.btn {
+  padding: 5px 10px;
+  border-radius: 4px;
+  outline: none;
+  cursor: pointer;
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+}
+/*# sourceMappingURL=styles.module.css.map */

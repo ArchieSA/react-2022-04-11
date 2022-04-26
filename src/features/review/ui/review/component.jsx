@@ -1,13 +1,13 @@
-import React, { useContext, useState } from "react";
+// import React, { useContext, useState } from "react";
 import classnames from "classnames";
 
 import { Rate } from "../../../rate/ui/rate/component";
 
 import styles from "./styles.module.scss";
-import { ThemeContext } from "../../../theme/context";
+// import { ThemeContext } from "../../../theme/context";
 
 export const Review = ({ user, text, rating, className }) => {
-  const theme = useContext(ThemeContext);
+  // const theme = useContext(ThemeContext);
 
   return (
     <div className={classnames(className, styles.root)}>

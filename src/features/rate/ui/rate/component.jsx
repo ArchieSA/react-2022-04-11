@@ -14,6 +14,7 @@ export const Rate = ({ value, size = "medium" }) => (
         key={index}
         className={classnames(styles.star, styles[size])}
         loading="lazy"
+        alt="star"
       />
     ))}
   </div>
