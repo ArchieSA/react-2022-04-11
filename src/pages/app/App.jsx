@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+// import React, { useState } from "react";
 import "./App.css";
 import { Restaurants } from "../../features/restaurant/ui/restaurants/component";
 import { Header } from "../../features/header/ui/header/component";
