@@ -3,3 +3,28 @@
   border: 1px solid black;
   border-radius: 4px;
 }
+.basketTitle{
+  font-size: 20px;
+  font-weight: 600;
+}
+.basketTop{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+.btn{
+  cursor: pointer;
+  background-color: white;
+  color: black;
+  font-size: 16px;
+  padding: 5px 10px;
+  border: 1px solid black;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+  &:hover{
+    background-color: black;
+    color: white;
+  }
+
+}
