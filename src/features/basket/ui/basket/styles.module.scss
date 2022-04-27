@@ -2,4 +2,14 @@
   padding: 20px;
   border: 1px solid black;
   border-radius: 4px;
+  .header {
+    display: flex;
+    justify-content: space-between;
+  }
+  .body {
+    padding-top: 16px;
+    .amount {
+      margin-left: 16px;
+    }
+  }
 }
