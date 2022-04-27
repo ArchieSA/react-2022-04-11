@@ -21,7 +21,7 @@ export const basket = (state = initialState, action) => {
       };
 
     case CANCEL_ORDER:
-      return (state = {});
+      return (state = initialState);
 
     default:
       return state;
