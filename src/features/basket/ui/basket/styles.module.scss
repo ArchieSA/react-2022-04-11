@@ -3,3 +3,17 @@
   border: 1px solid black;
   border-radius: 4px;
 }
+
+.header {
+  display: inline-block;
+  margin: 0 0 10px;
+}
+
+.item {
+  margin: 0 0 10px;
+}
+
+.name {
+  display: inline-block;
+  min-width: 250px;
+}
