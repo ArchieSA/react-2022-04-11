@@ -1,5 +1,5 @@
 import { useReducer } from "react";
-
+import { Rate } from "../../../rate/ui/rate/component";
 import styles from "./styles.module.scss";
 
 const reducer = (state, action) => {
@@ -8,7 +8,7 @@ const reducer = (state, action) => {
       return { name: action.payload, text: "", rating: 0 };
     case "changeText":
       return { ...state, text: action.payload };
-    case "setRating":
+    case "changeRate":
       return { ...state, rating: action.payload };
     default:
       return state;
@@ -21,6 +21,10 @@ export const NewReview = () => {
     text: "text",
     rating: 0,
   });
+
+  let changeRate = (rate) => {
+    dispatch({ type: "changeRate", payload: rate });
+  };
 
   return (
     <div className={styles.root}>
@@ -45,16 +49,7 @@ export const NewReview = () => {
       </div>
       <div className={styles.formElement}>
         <span className={styles.elementTitle}>Rating</span>
-        <input
-          value={state.rating}
-          type="number"
-          onChange={(event) => {
-            dispatch({
-              type: "setRating",
-              payload: Number(event.target.value),
-            });
-          }}
-        />
+        <Rate value={state.rating} isEditable={true} changeRate={(rating) => changeRate(rating)} />
       </div>
     </div>
   );
