@@ -3,12 +3,10 @@ import { cancelOrder } from "../../module/actions";
 import { selectProductInfo } from "../../module/selectors";
 import { Basket } from "./component";
 
-export const BasketContainer = ({ restaurant, ...props }) => {
+export const BasketContainer = (props) => {
   const dispatch = useDispatch();
   const basketClear = () => dispatch(cancelOrder());
-  const productsInfo = useSelector((state) =>
-    selectProductInfo(state, restaurant)
-  );
+  const productsInfo = useSelector((state) => selectProductInfo(state));
   return (
     <Basket {...props} productsInfo={productsInfo} basketClear={basketClear} />
   );

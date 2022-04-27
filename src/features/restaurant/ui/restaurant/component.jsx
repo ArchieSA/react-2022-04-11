@@ -29,7 +29,7 @@ export const Restaurant = ({ restaurant }) => {
           <Reviews reviews={restaurant.reviews} />
           <NewReview />
         </div>
-        <BasketContainer className={styles.basket} restaurant={restaurant} />
+        <BasketContainer className={styles.basket} />
       </div>
     </div>
   );
