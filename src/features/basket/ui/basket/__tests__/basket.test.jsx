@@ -1,12 +1,12 @@
-const componentTest = ({ componentName, filename }) => (`import { render, screen, fireEvent } from '@testing-library/react';
-import { ${componentName} } from '../component';
-import { ${filename} } from './mocks';
+import { render, screen, fireEvent } from '@testing-library/react';
+import { Basket } from '../component';
+import { basket } from '../mocks';
 
-describe('Test <${componentName} />', () => {
+describe('Test <Basket />', () => {
   it('should correct render title', () => {
     const funcMock = jest.fn();
 
-    render(<${componentName} prop={} onFunc={funcMock} />);
+    render(<Basket basket={basket} onClearBasket={funcMock} />);
 
     expect(screen.getByText("Your basket")).toBeInTheDocument();
   });
@@ -14,7 +14,7 @@ describe('Test <${componentName} />', () => {
   it('should correct render clearbutton', () => {
     const funcMock = jest.fn();
 
-    render(<${componentName} prop={} onFunc={funcMock} />);
+    render(<Basket basket={basket} onClearBasket={funcMock} />);
 
     expect(screen.getByText("Clear basket")).toBeInTheDocument();
   });
@@ -22,7 +22,7 @@ describe('Test <${componentName} />', () => {
   it('should correct click on clearbutton', () => {
     const funcMock = jest.fn();
 
-    render(<${componentName} prop={} onFunc={funcMock} />);
+    render(<Basket basket={basket} onClearBasket={funcMock} />);
 
     const button = screen.getByText("Clear basket");
 
@@ -35,7 +35,4 @@ describe('Test <${componentName} />', () => {
   });
 });
 
-// npm run test ${filename}.test.jsx
-`);
-
-module.exports = { componentTest };
+// npm run test basket.test.jsx

@@ -5,7 +5,6 @@ import { useContext } from "react";
 
 export const Header = () => {
   const theme = useContext(ThemeContext);
-  console.log("theme header", theme);
 
   return (
     <header className={styles.root}>

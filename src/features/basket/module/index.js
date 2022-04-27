@@ -1,9 +1,9 @@
-import { ADD_PRODUCT, REMOVE_PRODUCT } from "./actions";
+import { ADD_PRODUCT, REMOVE_PRODUCT, CLEAR_BASKET } from "./actions";
 
 const initialState = {};
 
 export const basket = (state = initialState, action) => {
-  console.log('action: ', action);
+
   switch (action.type) {
     case ADD_PRODUCT:
       return {
@@ -14,12 +14,16 @@ export const basket = (state = initialState, action) => {
     case REMOVE_PRODUCT:
       if (!state[action.payload]) {
         return state;
-      }
+      };
 
       return {
         ...state,
         [action.payload]: state[action.payload] - 1,
       };
+
+    case CLEAR_BASKET:
+      return initialState;
+
 
     default:
       return state;

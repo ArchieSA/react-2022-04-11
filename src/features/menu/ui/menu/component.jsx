@@ -8,7 +8,7 @@ export const Menu = ({ menu, className }) => (
     {menu.map((product) => (
       <ProductContainer
         key={product.id}
-        productName={product.name}
+        productId={product.id}
         className={styles.product}
       />
     ))}
