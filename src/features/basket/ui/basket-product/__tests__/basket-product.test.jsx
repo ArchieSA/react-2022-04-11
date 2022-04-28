@@ -10,14 +10,14 @@ const product = {
 describe('Test <BasketProduct />', () => {
   it('should correct render productName', () => {
 
-    render(<BasketProduct product={product} />);
+    render(<BasketProduct productId={product.id} productAmount={product.amount} />);
 
     expect(screen.getByText("Chicken tikka masala")).toBeInTheDocument();
   });
 
   it('should correct render product amount', () => {
 
-    render(<BasketProduct product={product} />);
+    render(<BasketProduct productId={product.id} productAmount={product.amount} />);
     const elem = screen.getByTestId("amount");
 
     expect(elem.textContent.replace(/\D/g, ``)).toBe("5");

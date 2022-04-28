@@ -22,7 +22,7 @@ export const basket = (state = initialState, action) => {
       };
 
     case CLEAR_BASKET:
-      return initialState;
+      return { ...initialState };
 
 
     default:
