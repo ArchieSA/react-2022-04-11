@@ -1,20 +1,41 @@
-import Star from "./img/star.svg";
-import GoldStar from "./img/star-gold.svg";
+import star from "./imgs/star.svg";
+import style from "./styles.module.scss";
 
-import styles from "./styles.module.scss";
-import classnames from "classnames";
-
-const MAX_RATING = 5;
-
-export const Rate = ({ value, size = "medium" }) => (
-  <div>
-    {new Array(MAX_RATING).fill(null).map((_, index) => (
-      <img
-        src={index >= value ? Star : GoldStar}
-        key={index}
-        className={classnames(styles.star, styles[size])}
-        loading="lazy"
-      />
-    ))}
-  </div>
-);
+export const Rate = ({ value, isEditable = false, changeRate = null }) => {
+  return (
+    <span>
+      {Array.from({ length: isEditable ? 5 : value > 5 ? 5 : value }).map((elem, index) => {
+        if (isEditable) {
+          return (
+            <img
+              className={
+                index < value
+                  ? `${style["rate-img"]} ${style["rate-img-active"]}`
+                  : style["rate-img"]
+              }
+              src={star}
+              alt=""
+              loading="lazy"
+              data-testid="rate-element"
+              key={index}
+              onClick={() => {
+                changeRate(index + 1);
+              }}
+            />
+          );
+        } else {
+          return (
+            <img
+              className={`${style["rate-img-small"]} ${style["rate-img-active"]}`}
+              src={star}
+              data-testid="rate-element"
+              loading="lazy"
+              key={index}
+              alt=""
+            />
+          );
+        }
+      })}
+    </span>
+  );
+};
