@@ -1,5 +1,18 @@
 .root {
+  position: relative;
   padding: 20px;
   border: 1px solid black;
   border-radius: 4px;
+}
+
+.products {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: auto;
+}
+
+.button {
+  position: absolute;
+  right: 10px;
+  top: 17px
 }
