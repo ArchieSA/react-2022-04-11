@@ -1,0 +1,18 @@
+.root {
+  padding: 20px;
+  border: 1px solid black;
+  border-radius: 4px;
+}
+
+.basketTitle {
+  font-size: 24px;
+  margin: 0 auto 30px;
+}
+
+.marginBottom10 {
+  margin-bottom: 10px;
+}
+
+.root div:not(:first-child) {
+  margin-bottom: 15px;
+}
