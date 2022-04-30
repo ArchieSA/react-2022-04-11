@@ -1,13 +1,15 @@
-export const selectBasket = (state) => state.basket;
+export const selectBasketModuleState = (state) => state.basket;
 
-export const selectProductCount = (state, productId) => {
-  const basket = selectBasket(state);
 
-  return basket[productId] || 0;
+export const selectProductCount = (state, payload) => {
+  const basket = selectBasketModuleState(state);
+
+  return basket[payload.productId] || 0;
 };
 
-export const selectOrderedProducts = (state) => {
-  const basket = selectBasket(state);
 
-  return Object.entries(basket).map(([name, count]) => ({ name, count }));
+export const selectOrderedProducts = (state) => {
+  const basket = selectBasketModuleState(state);
+
+  return Object.entries(basket).map(([id, count]) => ({ id, count }));
 };

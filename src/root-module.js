@@ -6,11 +6,11 @@ import { reviewReducer } from "./features/review/module/reducer";
 import { userReducer } from "./features/user/module/reducer";
 
 const rootReducer = combineReducers({
-  basket: basket,
-  restaurant: restaurantReducer,
-  product: productReducer,
-  review: reviewReducer,
-  user: userReducer,
+  basket     : basket,
+  restaurant : restaurantReducer,
+  product    : productReducer,
+  review     : reviewReducer,
+  user       : userReducer,
 });
 
 export const store = createStore(rootReducer);
