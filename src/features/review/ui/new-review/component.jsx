@@ -49,7 +49,7 @@ export const NewReview = ({ onSubmit }) => {
             dispatch({ type: "setRating", payload: value });
         }} />
       </div>
-      <button onClick={() => onSubmit(state)}>submit</button>
+      <button onClick={() => onSubmit(state)}>Submit</button>
     </div>
   );
 };

@@ -1,8 +1,18 @@
 .root {
   display: flex;
   justify-content: space-between;
+  padding: 5px 0;
 }
 
-.name {
+.root:not(:last-child) {
+  margin-bottom: 10px;
+}
+
+.productName {
+  font-size: 17px;
   font-weight: 500;
+}
+.productCount {
+  font-size: 17px;
+  font-weight: normal;
 }

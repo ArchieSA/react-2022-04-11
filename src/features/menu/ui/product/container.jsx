@@ -1,15 +1,17 @@
-import { Product } from "./component";
-import { useDispatch, useSelector } from "react-redux";
 import { useCallback } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { addProduct, removeProduct } from "../../../basket/module/actions";
 import { selectProductCount } from "../../../basket/module/selectors";
-import { getProductNameById } from '../../../basket/utils';
+import { selectProductNameById } from "../../module/selectors";
+import { Product } from "./component";
 
 
 export const ProductContainer = ({ productId, ...props }) => {
-  const dispatch = useDispatch();
-  const count = useSelector((state) => selectProductCount(state, productId));
-
+  const
+    dispatch    = useDispatch(),
+    productName = useSelector((state) => selectProductNameById(state, { productId })),
+    count       = useSelector((state) => selectProductCount(state, { productId }));
+    
   const decrement = useCallback(() => {
     dispatch(removeProduct(productId));
   }, [productId]);
@@ -22,7 +24,7 @@ export const ProductContainer = ({ productId, ...props }) => {
   return (
     <Product
       {...props}
-      productName = {getProductNameById(productId)}
+      productName = {productName}
       count       = {count}
       decrement   = {decrement}
       increment   = {increment}

@@ -1,5 +1,5 @@
 import { render, screen } from '@testing-library/react';
-import { BasketProduct } from '../component';
+import { BasketItem } from '../component';
 
 const product = {
   id: 'd75f762a-eadd-49be-8918-ed0daa8dd024',
@@ -7,17 +7,17 @@ const product = {
 };
 
 
-describe('Test <BasketProduct />', () => {
+describe('Test <BasketItem />', () => {
   it('should correct render productName', () => {
 
-    render(<BasketProduct productId={product.id} productAmount={product.amount} />);
+    render(<BasketItem productId={product.id} productAmount={product.amount} />);
 
     expect(screen.getByText("Chicken tikka masala")).toBeInTheDocument();
   });
 
   it('should correct render product amount', () => {
 
-    render(<BasketProduct productId={product.id} productAmount={product.amount} />);
+    render(<BasketItem productId={product.id} productAmount={product.amount} />);
     const elem = screen.getByTestId("amount");
 
     expect(elem.textContent.replace(/\D/g, ``)).toBe("5");
