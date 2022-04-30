@@ -2,14 +2,14 @@ import classnames from "classnames";
 import styles from "./styles.module.scss";
 
 export const Product = ({
-  productName,
   className,
+  product,
   count,
   decrement,
   increment,
 }) => (
   <div className={classnames(styles.root, className)}>
-    <span>{productName}</span>
+    <span>{product.name}</span>
     <div className={styles.actions}>
       <button
         onClick={decrement}
