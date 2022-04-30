@@ -5,10 +5,10 @@ import { ProductContainer } from "../product/container";
 export const Menu = ({ menu, className }) => (
   <div className={classnames(styles.root, className)}>
     <span className={styles.menuTitle}>Menu</span>
-    {menu.map((product) => (
+    {menu.map((productID) => (
       <ProductContainer
-        key={product.id}
-        productName={product.name}
+        key={productID}
+        productID={productID}
         className={styles.product}
       />
     ))}
