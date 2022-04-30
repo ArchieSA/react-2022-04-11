@@ -6,7 +6,11 @@ export const Menu = ({ menu, className }) => (
   <div className={classnames(styles.root, className)}>
     <span className={styles.menuTitle}>Menu</span>
     {menu.map((productID) => (
-      <ProductContainer key={productID} productID={productID} />
+      <ProductContainer
+        key={productID}
+        productID={productID}
+        className={styles.product}
+      />
     ))}
   </div>
 );
