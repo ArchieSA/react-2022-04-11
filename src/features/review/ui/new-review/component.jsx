@@ -6,7 +6,7 @@ import styles from "./styles.module.scss";
 const reducer = (state, action) => {
   switch (action.type) {
     case "changeName":
-      return { name: action.payload, text: "", rating: 0 };
+      return { userName: action.payload, text: "", rating: 0 };
     case "changeText":
       return { ...state, text: action.payload };
     case "setRating":
@@ -16,9 +16,9 @@ const reducer = (state, action) => {
   }
 };
 
-export const NewReview = () => {
+export const NewReview = ({ onSubmit }) => {
   const [state, dispatch] = useReducer(reducer, {
-    name: "DefaultName",
+    userName: "DefaultName",
     text: "text",
     rating: 0,
   });
@@ -29,7 +29,7 @@ export const NewReview = () => {
       <div className={styles.formElement}>
         <span className={styles.elementTitle}>Name</span>
         <input
-          value={state.name}
+          value={state.userName}
           onChange={(event) => {
             dispatch({ type: "changeName", payload: event.target.value });
           }}
@@ -49,6 +49,7 @@ export const NewReview = () => {
             dispatch({ type: "setRating", payload: value });
         }} />
       </div>
+      <button onClick={() => onSubmit(state)}>submit</button>
     </div>
   );
 };

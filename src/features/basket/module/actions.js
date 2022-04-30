@@ -1,7 +1,6 @@
 export const ADD_PRODUCT    = "basket/ADD_PRODUCT";
 export const REMOVE_PRODUCT = "basket/REMOVE_PRODUCT";
-export const CLEAR_BASKET   = "basket/CLEAR_BASKET";
-
+export const CLEAR_BASKET = "basket/CLEAR_BASKET";
 
 export const addProduct = (productName) => ({
   type: ADD_PRODUCT,
