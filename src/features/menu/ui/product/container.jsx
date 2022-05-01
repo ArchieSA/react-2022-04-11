@@ -11,8 +11,6 @@ export const ProductContainer = ({ productId, ...props }) => {
 
   const product= useSelector((state) => selectProductById(state, { productId }));
 
-  console.log("productName", product);
-
   const decrement = useCallback(() => {
     dispatch(removeProduct(productId));
   }, [productId]);

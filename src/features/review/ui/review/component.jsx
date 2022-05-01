@@ -17,3 +17,4 @@ export const Review = ({ userId, text, rating, className }) => {
     </div>
   );
 };
+
