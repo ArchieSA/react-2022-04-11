@@ -8,7 +8,6 @@ export const ProductContainer = ({ productId, ...props }) => {
   const dispatch = useDispatch();
   const count = useSelector((state) => selectProductCount(state, productId));
   const productName = useSelector((state)=>selectProductById(state,{ productId })).name;
-  console.log(productName);
   const decrement = useCallback(() => {
     dispatch(removeProduct(productName));
   }, [productName]);
