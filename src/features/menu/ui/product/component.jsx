@@ -7,8 +7,9 @@ export const Product = ({
   count,
   decrement,
   increment,
-}) => (
-  <div className={classnames(styles.root, className)}>
+}) => {
+  console.log(productName)
+return <div className={classnames(styles.root, className)}>
     <span>{productName}</span>
     <div className={styles.actions}>
       <button
@@ -28,4 +29,4 @@ export const Product = ({
       </button>
     </div>
   </div>
-);
+};
