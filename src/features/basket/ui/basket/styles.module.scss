@@ -1,4 +1,7 @@
 .root {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
   padding: 20px;
   border: 1px solid black;
   border-radius: 4px;

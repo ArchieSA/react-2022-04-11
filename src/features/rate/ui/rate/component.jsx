@@ -9,7 +9,7 @@ const MAX_RATING = 5;
 export const Rate = ({ value, size = "medium" }) => (
   <div>
     {new Array(MAX_RATING).fill(null).map((_, index) => (
-      <img
+      <img key = {index}
         src={index >= value ? Star : GoldStar}
         className={classnames(styles.star, styles[size])}
         loading="lazy"
