@@ -1,19 +1,28 @@
 import classnames from "classnames";
+import { BasketItemContainer } from "../basket-item/container";
+
 import styles from "./styles.module.scss";
 
-export const Basket = ({ className, basket, clear }) => {
+export const Basket = ({ products, onClearBasket, className }) => {
   return (
     <div className={classnames(styles.root, className)}>
-      <div className={styles.basketTitle}>Basket</div>
-      {Object.entries(basket).length > 0 &&
-        Object.entries(basket).map((entrie) => {
-          return (
-            <div key={`${entrie[0]} ${entrie[1]}`}>
-              {entrie[0]} - {entrie[1]}
-            </div>
-          );
-        })}
-      {Object.entries(basket).length > 0 && <button onClick={clear}>Clear</button>}
+      <span className={styles.title}>Basket</span>
+      <div className={styles.products}>
+        {products?.length > 0 ? (
+          products.map(({ id, count }) => (
+            <BasketItemContainer productId={id} count={count} key={id} className={styles.product} />
+          ))
+        ) : (
+          <span>Empty</span>
+        )}
+      </div>
+      <button
+        onClick={onClearBasket}
+        className={styles.clearAction}
+        disabled={products?.length <= 0}
+      >
+        Clear
+      </button>
     </div>
   );
 };

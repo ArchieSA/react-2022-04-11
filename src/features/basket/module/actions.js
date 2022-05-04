@@ -1,17 +1,17 @@
 export const ADD_PRODUCT = "basket/ADD_PRODUCT";
 export const REMOVE_PRODUCT = "basket/REMOVE_PRODUCT";
-export const REMOVE_ALL_PRODUCTS = "basket/REMOVE_ALL_PRODUCTS";
+export const CLEAR_BASKET = "basket/CLEAR_BASKET";
 
-export const addProduct = (productName) => ({
+export const addProduct = (id) => ({
   type: ADD_PRODUCT,
-  payload: productName,
+  payload: id,
 });
 
-export const removeProduct = (productName) => ({
+export const removeProduct = (id) => ({
   type: REMOVE_PRODUCT,
-  payload: productName,
+  payload: id,
 });
 
-export const removeAllProduct = () => ({
-  type: REMOVE_ALL_PRODUCTS,
+export const clearBasket = () => ({
+  type: CLEAR_BASKET,
 });

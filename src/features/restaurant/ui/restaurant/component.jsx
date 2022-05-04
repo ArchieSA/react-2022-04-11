@@ -1,21 +1,11 @@
-import { useMemo } from "react";
-import { Menu } from "../../../menu/ui/menu/component";
-import { Rate } from "../../../rate/ui/rate/component";
-import { Reviews } from "../../../review/ui/reviews/component";
-import { NewReview } from "../../../review/ui/new-review/component";
-
-import styles from "./styles.module.scss";
 import { BasketContainer } from "../../../basket/ui/basket/container";
+import { MenuContainer } from "../../../menu/ui/menu/container";
+import { Rate } from "../../../rate/ui/rate/component";
+import { NewReviewContainer } from "../../../review/ui/new-review/container";
+import { Reviews } from "../../../review/ui/reviews/component";
+import styles from "./styles.module.scss";
 
-export const Restaurant = ({ restaurant }) => {
-  const restaurantRate = useMemo(
-    () =>
-      Math.ceil(
-        restaurant.reviews.reduce((prev, curr) => prev + curr.rating, 0) / restaurant.reviews.length
-      ),
-    [restaurant.reviews]
-  );
-
+export const Restaurant = ({ restaurant, restaurantRate }) => {
   return (
     <div className={styles.root} data-testid="restaurant-element">
       <div className={styles.mainInfo}>
@@ -23,10 +13,10 @@ export const Restaurant = ({ restaurant }) => {
         <Rate value={restaurantRate} />
       </div>
       <div className={styles.detailedInfo}>
-        <Menu menu={restaurant.menu} className={styles.menu} />
+        <MenuContainer productIds={restaurant.menu} className={styles.menu} />
         <div className={styles.reviews}>
-          <Reviews reviews={restaurant.reviews} />
-          <NewReview />
+          <Reviews reviewIds={restaurant.reviews} />
+          <NewReviewContainer restaurantId={restaurant.id} />
         </div>
         <BasketContainer className={styles.basket} />
       </div>

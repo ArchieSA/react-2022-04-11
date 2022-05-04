@@ -1,15 +1,15 @@
 import { Basket } from "./component";
 import { useDispatch, useSelector } from "react-redux";
+import { selectOrderedProducts } from "../../module/selectors";
 import { useCallback } from "react";
-import { selectBasket } from "../../../basket/module/selectors";
-import { removeAllProduct } from "../../../basket/module/actions";
+import { clearBasket } from "../../module/actions";
 
-export const BasketContainer = ({ className }) => {
+export const BasketContainer = (props) => {
   const dispatch = useDispatch();
-  const basket = useSelector(selectBasket);
-  const clear = useCallback(() => {
-    dispatch(removeAllProduct());
-  }, []);
 
-  return <Basket className={className} basket={basket} clear={clear} />;
+  const products = useSelector((state) => selectOrderedProducts(state));
+
+  const clearBasketCallback = useCallback(() => dispatch(clearBasket()), []);
+
+  return <Basket products={products} onClearBasket={clearBasketCallback} {...props} />;
 };

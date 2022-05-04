@@ -1,18 +1,12 @@
 import React from "react";
-import { Review } from "../review/component";
 import styles from "./styles.module.scss";
+import { ReviewContainer } from "../review/container";
 
-export const Reviews = ({ reviews }) => (
+export const Reviews = ({ reviewIds }) => (
   <div>
-    {reviews.length &&
-      reviews.map((review) => (
-        <Review
-          key={review.id}
-          user={review.user}
-          text={review.text}
-          rating={review.rating}
-          className={styles.review}
-        />
+    {reviewIds.length &&
+      reviewIds.map((reviewId) => (
+        <ReviewContainer key={reviewId} reviewId={reviewId} className={styles.review} />
       ))}
   </div>
 );

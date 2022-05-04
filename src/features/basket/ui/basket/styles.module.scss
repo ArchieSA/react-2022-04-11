@@ -1,18 +1,49 @@
 .root {
   padding: 20px;
-  border: 1px solid black;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
   border-radius: 4px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-.basketTitle {
+.title {
   font-size: 24px;
-  margin: 0 auto 30px;
 }
 
-.marginBottom10 {
+.products {
+  margin-top: 20px;
+  margin-bottom: auto;
+  width: 100%;
+}
+
+.product:not(:last-child) {
   margin-bottom: 10px;
 }
 
-.root div:not(:first-child) {
-  margin-bottom: 15px;
+.clearAction {
+  background-color: #fff;
+  border: 1px solid grey;
+  border-radius: 4px;
+  padding: 4px 10px;
+  height: 30px;
+  transition: 0.2s;
+
+  &:first-child {
+    margin-right: 10px;
+  }
+
+  &:last-child {
+    margin-left: 10px;
+  }
+
+
+  &:hover {
+    background-color: rgba(128, 128, 128, 0.1);
+    cursor: pointer;
+  }
+
+  &:disabled {
+    opacity: 0.5;
+  }
 }

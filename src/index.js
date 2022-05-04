@@ -4,7 +4,6 @@ import { Provider } from "react-redux";
 import "./index.css";
 import { App } from "./pages/app/App";
 import reportWebVitals from "./reportWebVitals";
-import { restaurants } from "./constants/fixtures";
 import { store } from "./root-module";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
@@ -12,7 +11,7 @@ const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
     <Provider store={store}>
-      <App restaurants={restaurants} />
+      <App />
     </Provider>
   </React.StrictMode>
 );
