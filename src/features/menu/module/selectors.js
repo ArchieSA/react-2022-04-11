@@ -1,2 +1,4 @@
-export const selectProductById = (state, payload) =>
-  state.review[payload.productId];
+export const selectProductsModuleState = (state) => state.product;
+
+export const selectProductById = (state, payload) => 
+  selectProductsModuleState(state).entities[payload];
