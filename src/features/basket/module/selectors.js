@@ -9,5 +9,5 @@ export const selectProductCount = (state, productId) => {
 export const selectOrderedProducts = (state) => {
   const basket = selectBasket(state);
 
-  return Object.entries(basket).map(([name, count]) => ({ name, count }));
+  return Object.entries(basket).map(([id, count]) => ({ id, count }));
 };

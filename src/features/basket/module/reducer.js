@@ -19,7 +19,6 @@ export const basket = (state = initialState, action) => {
         ...state,
         [action.payload]: state[action.payload] - 1,
       };
-
     case CLEAR_BASKET:
       return { ...initialState };
 

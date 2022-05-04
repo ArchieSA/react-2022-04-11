@@ -11,11 +11,5 @@ export const BasketContainer = (props) => {
 
   const clearBasketCallback = useCallback(() => dispatch(clearBasket()), []);
 
-  return (
-    <Basket
-      products={products}
-      onClearBasket={clearBasketCallback}
-      {...props}
-    />
-  );
+  return <Basket products={products} onClearBasket={clearBasketCallback} {...props} />;
 };
