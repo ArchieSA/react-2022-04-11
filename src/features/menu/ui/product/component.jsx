@@ -9,7 +9,7 @@ export const Product = ({
   increment,
 }) => (
   <div className={classnames(styles.root, className)}>
-    <span>{productName}</span>
+    <span>{ productName }</span>
     <div className={styles.actions}>
       <button
         onClick={decrement}
