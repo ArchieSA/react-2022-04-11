@@ -1,0 +1,18 @@
+.star {
+  height: 32px;
+}
+
+.star.medium {
+  width: 32px;
+  height: 32px;
+}
+
+.star.small {
+  width: 18px;
+  height: 18px;
+}
+
+.star:not(:last-child) {
+  margin-right: 5px;
+}
+/*# sourceMappingURL=styles.module.css.map */
