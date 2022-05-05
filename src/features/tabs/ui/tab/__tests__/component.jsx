@@ -11,12 +11,10 @@ describe("test tab component", () => {
   it("should invoke onTabSelect", () => {
     const functionMock = jest.fn();
 
-    render(<Tab label={"New Restaurant"} onTabSelect={functionMock} />);
-
-    const buttonElement = screen.getByText("New Restaurant");
-
+    const { getByText } = render(<Tab label={"New Restaurant"} onTabSelect={functionMock} />);
+    
     fireEvent(
-      buttonElement,
+      getByText("New Restaurant"),
       new MouseEvent("click", {
         bubbles: true,
         cancelable: true,
