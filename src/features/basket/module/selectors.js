@@ -6,8 +6,11 @@ export const selectProductCount = (state, productId) => {
   return basket[productId] || 0;
 };
 
+
 export const selectOrderedProducts = (state) => {
   const basket = selectBasket(state);
-
-  return Object.entries(basket).map(([name, count]) => ({ name, count }));
-};
+  return Object.entries(basket).map(([id, count]) => {
+    const name = state.product.entities[id].name;
+    return { name, count };
+  });
+}

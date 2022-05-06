@@ -11,11 +11,11 @@ export const ProductContainer = ({ productId, ...props }) => {
   const count = useSelector((state) => selectProductCount(state, productId));
 
   const decrement = useCallback(() => {
-    dispatch(removeProduct(productId));
+    dispatch(removeProduct( productId));
   }, [productId]);
 
   const increment = useCallback(() => {
-    dispatch(addProduct(productId));
+    dispatch(addProduct( productId));
   }, [productId]);
 
   return (
