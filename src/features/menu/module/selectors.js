@@ -7,3 +7,5 @@ export const selectProductById = (state, payload) =>
   
 export const selectProductNameById = (state, payload) =>
   selectProductById(state, payload)?.name;
+
+export const selectProductIds = (state) => selectProductModuleState(state).ids;
