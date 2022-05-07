@@ -1,8 +1,9 @@
 import React from "react";
 import classnames from "classnames";
 import { Rate } from "../../../rate/ui/rate/component";
-import styles from "./styles.module.scss";
 import { UserContainer } from "../../../user/ui/user/container";
+
+import styles from "./styles.module.scss";
 
 export const Review = ({ userId, text, rating, className }) => {
   return (

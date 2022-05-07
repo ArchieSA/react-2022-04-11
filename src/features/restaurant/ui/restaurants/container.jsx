@@ -1,9 +1,24 @@
 import { Restaurants } from "./component";
-import { useSelector } from "react-redux";
-import { selectRestaurantIds } from "../../module/selectors";
+import { useDispatch, useSelector } from "react-redux";
+import {
+  selectIsRestaurantsLoading,
+  selectRestaurantIds,
+} from "../../module/selectors";
+import { loadRestaurants } from "../../module/thunks/load-restarants";
+import { useEffect } from "react";
 
 export const RestaurantsContainer = (props) => {
+  const dispatch = useDispatch();
   const restaurantIds = useSelector(selectRestaurantIds);
+  const isLoading = useSelector(selectIsRestaurantsLoading);
 
-  return <Restaurants {...props} restaurantIds={restaurantIds} />;
+  useEffect(() => {
+    dispatch(loadRestaurants());
+  }, []);
+
+  return isLoading ? (
+    <span>Loading</span>
+  ) : (
+    <Restaurants {...props} restaurantIds={restaurantIds} />
+  );
 };

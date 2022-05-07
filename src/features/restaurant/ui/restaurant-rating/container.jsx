@@ -1,10 +1,11 @@
-import { useSelector } from 'react-redux';
-import { selectRestaurantRating } from '../../module/selectors';
-import { Rate } from '../../../rate/ui/rate/component';
-
+import { useSelector } from "react-redux";
+import { selectRestaurantRating } from "../../module/selectors";
+import { Rate } from "../../../rate/ui/rate/component";
 
 export const RestaurantRatingContainer = ({ restaurantId, ...props }) => {
-  const rating = useSelector((state) => selectRestaurantRating(state, restaurantId));
+  const rating = useSelector((state) =>
+    selectRestaurantRating(state, restaurantId)
+  );
 
-  return <Rate value={rating} {...props} />
-}
+  return <Rate {...props} value={rating} />;
+};

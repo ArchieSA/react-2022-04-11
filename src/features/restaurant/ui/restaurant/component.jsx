@@ -1,14 +1,11 @@
+import { Menu } from "../../../menu/ui/menu/component";
 import { Reviews } from "../../../review/ui/reviews/component";
 import { BasketContainer } from "../../../basket/ui/basket/container";
-import { Menu } from "../../../menu/ui/menu/component";
 import { NewReviewContainer } from "../../../review/ui/new-review/container";
-import { RestaurantRatingContainer } from '../restaurant-rating/container';
-import styles from "./styles.module.scss";
-
-
+import { RestaurantRatingContainer } from "../restaurant-rating/container";
+import styles from './styles.module.scss';
 
 export const Restaurant = ({ restaurant }) => {
-
   return (
     <div className={styles.root}>
       <div className={styles.mainInfo}>

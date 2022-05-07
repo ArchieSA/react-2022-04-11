@@ -1,16 +1,27 @@
-import { basket } from "./features/basket/module/reducer";
-import { combineReducers, createStore } from "redux";
-import { restaurantReducer } from "./features/restaurant/module/reducer";
+import { combineReducers } from "redux";
 import { productReducer } from "./features/menu/module/reducer";
 import { reviewReducer } from "./features/review/module/reducer";
 import { userReducer } from "./features/user/module/reducer";
+import { configureStore } from "@reduxjs/toolkit";
+import { basketSlice } from "./features/basket/module";
+import { restaurantSlice } from "./features/restaurant/module";
+
+const actionLogger = (store) => (next) => (action) => {
+  console.log("action:", action);
+  return next(action);
+};
 
 const rootReducer = combineReducers({
-  basket     : basket,
-  restaurant : restaurantReducer,
-  product    : productReducer,
-  review     : reviewReducer,
-  user       : userReducer,
+  basket: basketSlice.reducer,
+  restaurant: restaurantSlice.reducer,
+  product: productReducer,
+  review: reviewReducer,
+  user: userReducer,
 });
 
-export const store = createStore(rootReducer);
+export const store = configureStore({
+  reducer: rootReducer,
+  middleware: (getDefaultMiddleware) =>
+    getDefaultMiddleware().concat().concat(actionLogger),
+  devTools: true,
+});
