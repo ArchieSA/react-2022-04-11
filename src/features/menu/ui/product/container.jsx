@@ -1,9 +1,10 @@
 import { Product } from "./component";
 import { useDispatch, useSelector } from "react-redux";
-import { useCallback } from "react";
+import { useCallback, useEffect } from "react";
 import { selectProductCount } from "../../../basket/module/selectors";
-import { selectProductNameById } from "../../module/selectors";
+import {selectIsProductLoading, selectProductNameById} from "../../module/selectors";
 import { basketSlice } from "../../../basket/module";
+import {loadProduct} from "../../module/thunk/load-products";
 
 export const ProductContainer = ({ productId, ...props }) => {
   const dispatch = useDispatch();
@@ -21,7 +22,15 @@ export const ProductContainer = ({ productId, ...props }) => {
     dispatch(basketSlice.actions.addProduct(productId));
   }, [productId]);
 
-  return (
+  const isLoading = useSelector(selectIsProductLoading);
+
+  useEffect(() => {
+    dispatch(loadProduct(productId));
+  }, []);
+
+  return isLoading || !productName ? (
+      <span>Loading</span>
+  ) : (
     <Product
       {...props}
       productName={productName}
