@@ -18,9 +18,11 @@ export const selectRestaurantRating = (state, restaurantId) => {
   const restaurant = selectRestaurantById(state, { restaurantId });
   const reviews = selectReviewByIds(state, restaurant.reviews);
 
-  return Math.ceil(
-    reviews.reduce((prev, curr) => prev + curr.rating, 0) / reviews.length
-  );
+  return reviews?.filter(review => !!review).length ?
+    Math.ceil(
+        reviews.reduce((prev, curr) => prev + curr.rating, 0) / reviews.length
+    )
+  : 0;
 };
 
 export const selectRestaurantIds = createSelector(

@@ -1,6 +1,6 @@
 import React from "react";
 import classnames from "classnames";
-import { connect } from "react-redux";
+// import { connect } from "react-redux";
 
 import { Rate } from "../../../rate/ui/rate/component";
 import { UserContainer } from "../../../user/ui/user/container";
