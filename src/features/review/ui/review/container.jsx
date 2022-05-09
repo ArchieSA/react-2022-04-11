@@ -8,9 +8,9 @@ export const ReviewContainer = ({ reviewId, ...props }) => {
   return (
     <Review
       {...props}
-      userId={review.userId}
-      text={review.text}
-      rating={review.rating}
+      userId={review?.userId}
+      text={review?.text}
+      rating={review?.rating}
     />
   );
 };
