@@ -1,16 +1,14 @@
 import classnames from "classnames";
 import styles from "./styles.module.scss";
-import { ProductContainer } from "../product/container";
+import { ProductsContainer } from "../../../menu/ui/products/container";
 
-export const Menu = ({ productIds, className }) => (
+export const Menu = ({ productIds, restaurantId, className }) => (
   <div className={classnames(styles.root, className)}>
     <span className={styles.menuTitle}>Menu</span>
-    {productIds.map((productId) => (
-      <ProductContainer
-        key={productId}
-        productId={productId}
-        className={styles.product}
-      />
-    ))}
+    <ProductsContainer
+      restaurantId={restaurantId}
+      productIds={productIds}
+      className={styles.product}
+    />
   </div>
 );

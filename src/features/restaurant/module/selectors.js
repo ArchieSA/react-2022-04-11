@@ -17,7 +17,6 @@ export const selectRestaurantTabs = (state) =>
 export const selectRestaurantRating = (state, restaurantId) => {
   const restaurant = selectRestaurantById(state, { restaurantId });
   const reviews = selectReviewByIds(state, restaurant.reviews);
-
   return Math.ceil(
     reviews.reduce((prev, curr) => prev + curr.rating, 0) / reviews.length
   );
@@ -30,3 +29,11 @@ export const selectRestaurantIds = createSelector(
 
 export const selectIsRestaurantsLoading = (state) =>
   selectRestaurantModuleState(state).isLoading;
+
+export const selectRestaurantReviewIds = (state, restaurantId) => {
+  return selectRestaurantById(state, { restaurantId }).reviews;
+};
+
+export const selectRestaurantProductIds = (state, restaurantId) => {
+  return selectRestaurantById(state, { restaurantId }).menu;
+};
