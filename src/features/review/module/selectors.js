@@ -3,7 +3,7 @@ import { createSelector } from "reselect";
 export const selectReviewModuleState = (state) => state.review;
 
 export const selectReviewById = (state, payload) =>
-  selectReviewModuleState(state).entities[payload.reviewId];
+  selectReviewModuleState(state).entities[payload];
 
 export const createSelectReviewById = () =>
   createSelector(
@@ -12,8 +12,15 @@ export const createSelectReviewById = () =>
   );
 
 export const selectReviewByIds = (state, reviewIds) =>
-  reviewIds.map(
-    (reviewId) => selectReviewModuleState(state).entities[reviewId]
-  );
+  reviewIds
+    .map((reviewId) => selectReviewModuleState(state).entities[reviewId])
+    .filter(Boolean);
 
 export const selectReviewIds = (state) => selectReviewModuleState(state).ids;
+
+export const selectIsReviewLoading = (state) =>
+  selectReviewModuleState(state).isLoading;
+
+export const selectIsReviewPresent = (state, reviewId) => {
+  return !!selectReviewById(state, reviewId);
+};
