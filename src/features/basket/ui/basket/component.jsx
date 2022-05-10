@@ -1,7 +1,5 @@
 import classnames from "classnames";
-
 import { BasketItemContainer } from "../basket-item/container";
-
 import styles from "./styles.module.scss";
 
 export const Basket = ({ productIds, onClearBasket, className }) => {

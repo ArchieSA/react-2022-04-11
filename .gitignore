@@ -25,3 +25,7 @@ yarn-error.log*
 
 
 /.idea
+
+# my
+/create-components
+/archive

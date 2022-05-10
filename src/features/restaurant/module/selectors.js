@@ -19,7 +19,7 @@ export const selectRestaurantRating = (state, restaurantId) => {
   const reviews = selectReviewByIds(state, restaurant.reviews);
 
   return Math.ceil(
-    reviews.reduce((prev, curr) => prev + curr.rating, 0) / reviews.length
+    reviews?.reduce((prev, curr) => prev + curr?.rating, 0) / reviews.length
   );
 };
 

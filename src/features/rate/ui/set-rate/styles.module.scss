@@ -1,0 +1,51 @@
+.visuallyHidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  -webkit-clip-path: inset(100%);
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+.root {
+  margin: 20px 0;
+  display: flex;
+  align-items: flex-start;
+}
+
+.title {
+  display: inline-block;
+  margin: 5px 0;
+  width: 70px;
+}
+
+// Select
+.label {
+  display: block;
+  width: 37px;
+  height: 33px;
+  margin-right: 4px;
+  cursor: pointer;
+}
+
+.label:first-child {
+  margin-right: 0;
+}
+
+.input:checked~.label .image,
+.input:focus~.label .image,
+.label:hover .image,
+.label:hover~.label .image {
+  fill: #ff9000;
+}
+
+.image {
+  fill: #c7c7c7;
+  -webkit-transition: fill 0.3s;
+  transition: fill 0.3s;
+}

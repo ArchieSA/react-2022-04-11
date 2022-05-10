@@ -1,4 +1,5 @@
 import { useReducer } from "react";
+import { SetRate } from "../../../rate/ui/set-rate/component";
 
 import styles from "./styles.module.scss";
 
@@ -44,19 +45,11 @@ export const NewReview = ({ onSubmit }) => {
         />
       </div>
       <div className={styles.formElement}>
-        <span className={styles.elementTitle}>Rating</span>
-        <input
-          value={state.rating}
-          type="number"
-          onChange={(event) => {
-            dispatch({
-              type: "setRating",
-              payload: Number(event.target.value),
-            });
-          }}
-        />
+        <SetRate rating={state.rating} onChange={(value) => {
+            dispatch({ type: "setRating", payload: value });
+        }} />
       </div>
-      <button onClick={() => onSubmit(state)}>submit</button>
+      <button onClick={() => onSubmit(state)}>Submit</button>
     </div>
   );
 };

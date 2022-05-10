@@ -5,11 +5,11 @@ export const Tabs = ({ tabs, selectedId, onTabSelect }) => (
   <div className={styles.root}>
     {tabs.map(({ label, id }) => (
       <Tab
-        key={id}
-        label={label}
-        onTabSelect={() => onTabSelect(id)}
-        isSelected={id === selectedId}
-        className={styles.tab}
+        key         = {id}
+        label       = {label}
+        onTabSelect = {() => onTabSelect(id)}
+        isSelected  = {id === selectedId}
+        className   = {styles.tab}
       />
     ))}
   </div>

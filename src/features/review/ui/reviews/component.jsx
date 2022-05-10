@@ -4,8 +4,7 @@ import { ReviewContainer } from "../review/container";
 
 export const Reviews = ({ reviewIds }) => (
   <div>
-    {reviewIds.length &&
-      reviewIds.map((reviewId) => (
+    {reviewIds?.map((reviewId) => (
         <ReviewContainer
           key={reviewId}
           reviewId={reviewId}

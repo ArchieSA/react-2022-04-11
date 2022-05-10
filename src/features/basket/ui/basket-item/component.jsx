@@ -1,12 +1,10 @@
-import classnames from "classnames";
-
 import styles from "./styles.module.scss";
 
-export const BasketItem = ({ name, count, className }) => {
+export const BasketItem = ({ name, count }) => {
   return (
-    <div className={classnames(styles.root, className)}>
-      <span className={styles.name}>{name}</span>
-      <span className={styles.count}>{count}</span>
+    <div className={styles.root}>
+      <div className={styles.productName}>{name}</div>
+      <div className={styles.productCount} data-testid="count">{count}&nbsp;th.</div>
     </div>
   );
 };

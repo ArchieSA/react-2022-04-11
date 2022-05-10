@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { RestaurantContainer } from "../restaurant/container";
-import { RestaurantTabsContainer } from "../restaurant-tabs/container";
+import { RestaurantTabsContainer } from '../restaurant-tabs/container';
+
 
 export const Restaurants = ({ restaurantIds }) => {
   const [currentRestaurantId, setCurrentRestaurantId] = useState(
