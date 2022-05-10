@@ -6,7 +6,9 @@ export const SpinnerLoader = ({ isLoading, text }) => {
   return  (
     <div className={styles.root}>
       <div className={styles.spinnerLoader} />
-      <div className={styles.text}>{`Загрузка ${text}...`}</div>
+      {
+        text && <div className={styles.text}>{`Загрузка ${text}...`}</div>
+      }  
     </div>
   )
 };
