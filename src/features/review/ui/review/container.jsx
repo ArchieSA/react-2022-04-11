@@ -4,6 +4,7 @@ import { selectReviewById } from "../../module/selectors";
 
 export const ReviewContainer = ({ reviewId, ...props }) => {
   const review = useSelector((state) => selectReviewById(state, { reviewId }));
+
   return (
     <Review
       {...props}

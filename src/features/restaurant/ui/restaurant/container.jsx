@@ -4,7 +4,7 @@ import { selectRestaurantById } from "../../module/selectors";
 
 export const RestaurantContainer = ({ restaurantId, ...props }) => {
   const restaurant = useSelector((state) =>
-    selectRestaurantById(state, { restaurantId })
+    selectRestaurantById(state, {restaurantId})
   );
 
   return <Restaurant {...props} restaurant={restaurant} />;
