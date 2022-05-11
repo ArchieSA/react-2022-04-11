@@ -1,10 +1,10 @@
 import { combineReducers } from "redux";
-import { productReducer } from "./features/menu/module/reducer";
-import { reviewReducer } from "./features/review/module/reducer";
-import { userReducer } from "./features/user/module/reducer";
 import { configureStore } from "@reduxjs/toolkit";
 import { basketSlice } from "./features/basket/module";
 import { restaurantSlice } from "./features/restaurant/module";
+import { reviewSlice } from "./features/review/module";
+import { productSlice } from "./features/menu/module";
+import { userSlice } from "./features/user/module";
 
 const actionLogger = (store) => (next) => (action) => {
   console.log("action:", action);
@@ -14,9 +14,9 @@ const actionLogger = (store) => (next) => (action) => {
 const rootReducer = combineReducers({
   basket: basketSlice.reducer,
   restaurant: restaurantSlice.reducer,
-  product: productReducer,
-  review: reviewReducer,
-  user: userReducer,
+  product: productSlice.reducer,
+  review: reviewSlice.reducer,
+  user: userSlice.reducer,
 });
 
 export const store = configureStore({

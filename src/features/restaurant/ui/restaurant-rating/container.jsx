@@ -6,6 +6,5 @@ export const RestaurantRatingContainer = ({ restaurantId, ...props }) => {
   const rating = useSelector((state) =>
     selectRestaurantRating(state, restaurantId)
   );
-
   return <Rate {...props} value={rating} />;
 };

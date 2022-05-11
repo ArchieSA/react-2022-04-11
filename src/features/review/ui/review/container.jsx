@@ -1,11 +1,14 @@
 import React from "react";
 import { useSelector } from "react-redux";
+import { UiLoader } from "../../../../ui/UiLoader/component";
 import { selectReviewById } from "../../module/selectors";
 import { Review } from "./component";
 
 export const ReviewContainer = ({ reviewId, ...props }) => {
   const review = useSelector((state) => selectReviewById(state, { reviewId }));
-  return (
+  return !review ? (
+    <UiLoader />
+  ) : (
     <Review
       {...props}
       userId={review.userId}
