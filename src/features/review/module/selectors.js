@@ -2,8 +2,9 @@ import { createSelector } from "reselect";
 
 export const selectReviewModuleState = (state) => state.review;
 
-export const selectReviewById = (state, payload) =>
-  selectReviewModuleState(state).entities[payload.reviewId];
+export const selectReviewById = (state, payload) => {
+  return selectReviewModuleState(state).entities[payload.reviewId];
+}
 
 export const createSelectReviewById = () =>
   createSelector(
@@ -17,3 +18,6 @@ export const selectReviewByIds = (state, reviewIds) =>
   );
 
 export const selectReviewIds = (state) => selectReviewModuleState(state).ids;
+
+export const selectIsReviewsLoading = (state) =>
+  selectReviewModuleState(state).isLoading;

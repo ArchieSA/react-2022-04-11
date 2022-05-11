@@ -6,6 +6,7 @@ import {
 } from "../../module/selectors";
 import { loadRestaurants } from "../../module/thunks/load-restarants";
 import { useEffect } from "react";
+import { UiLoader } from "../../../../ui/UiLoader/component";
 
 export const RestaurantsContainer = (props) => {
   const dispatch = useDispatch();
@@ -17,7 +18,7 @@ export const RestaurantsContainer = (props) => {
   }, []);
 
   return isLoading ? (
-    <span>Loading</span>
+    <UiLoader />
   ) : (
     <Restaurants {...props} restaurantIds={restaurantIds} />
   );
