@@ -6,6 +6,5 @@ export const RestaurantContainer = ({ restaurantId, ...props }) => {
   const restaurant = useSelector((state) =>
     selectRestaurantById(state, { restaurantId })
   );
-
   return <Restaurant {...props} restaurant={restaurant} />;
 };

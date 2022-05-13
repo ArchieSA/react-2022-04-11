@@ -21,7 +21,7 @@ export const ProductContainer = ({ productId, ...props }) => {
     dispatch(basketSlice.actions.addProduct(productId));
   }, [productId]);
 
-  return (
+  return productName && (
     <Product
       {...props}
       productName={productName}
