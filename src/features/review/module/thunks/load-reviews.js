@@ -1,6 +1,6 @@
 import { reviewSlice } from "..";
 
-export function loadReview(restaurantId) {
+export function loadReviews(restaurantId) {
   return function (dispatch) {
 
     dispatch(reviewSlice.actions.startLoading());

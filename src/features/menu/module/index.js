@@ -1,6 +1,4 @@
 import { createSlice } from "@reduxjs/toolkit";
-import updateArrByArrSimple from './utils/update-arr-by-arr-simple/index';
-
 
 export const productSlice = createSlice({
   name: "product",
@@ -23,7 +21,6 @@ export const productSlice = createSlice({
       state.isLoading = false;
       state.error = null;
 
-      state.ids = updateArrByArrSimple(state.ids, payload.map(({ id }) => id));
       state.entities = {
         ...state.entities,
         ...payload.reduce((acc, entity) => {
@@ -31,6 +28,7 @@ export const productSlice = createSlice({
           return acc;
         }, {})
       };
+      state.ids = Object.keys(state.entities);
     },
   },
 });

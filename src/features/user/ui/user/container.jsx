@@ -11,5 +11,5 @@ export const UserContainer = ({ userId, ...props }) => {
 
   return isLoading
     ? <SpinnerLoader isLoading={isLoading} />
-    : <User {...props} userName={user.name} />;
+    : <User {...props} userName={user?.name} />;
 };

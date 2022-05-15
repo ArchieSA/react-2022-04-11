@@ -1,4 +1,5 @@
 .root {
+  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -6,8 +7,20 @@
   height: 60px;
   background-color: #000;
 }
-
 .logo {
   height: 18px;
   width: 115px;
+}
+
+.linkBox {
+  position: absolute;
+  color: white;
+  right: 0;
+}
+.link {
+  color: white;
+  margin: 0 8px;
+  &:hover {
+    text-decoration: underline;
+  }
 }

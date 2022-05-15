@@ -1,8 +1,8 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Reviews } from "./component";
-import { selectIsReviewLoading, selectReviewIds } from '../../module/selectors';
-import { loadReview } from "../../module/thunks/load-review";
+import { selectIsReviewLoading, selectReviewIdsByRestaurantId } from '../../module/selectors';
+import { loadReviews } from "../../module/thunks/load-reviews";
 import { loadUsers } from '../../../user/module/thunks/load-users';
 import { SpinnerLoader } from '../../../spinner/component';
 
@@ -12,14 +12,14 @@ export const ReviewsContainer = ({ restaurantId }) => {
   const
     dispatch = useDispatch(),
     isLoading = useSelector(selectIsReviewLoading),
-    reviewIds = useSelector(selectReviewIds);
+    reviewIds = useSelector((state) => selectReviewIdsByRestaurantId(state, restaurantId));
   
   useEffect(() => {
     dispatch(loadUsers());
   }, []);
 
   useEffect(() => {
-    dispatch(loadReview(restaurantId));
+    dispatch(loadReviews(restaurantId));
   }, [restaurantId]);
 
   return isLoading ? (

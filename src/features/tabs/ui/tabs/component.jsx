@@ -3,11 +3,12 @@ import styles from "./styles.module.scss";
 
 export const Tabs = ({ tabs, selectedId, onTabSelect }) => (
   <div className={styles.root}>
-    {tabs.map(({ label, id }) => (
+    {tabs.map(({ label, id, href }) => (
       <Tab
         key         = {id}
+        href        = {href}
         label       = {label}
-        onTabSelect = {() => onTabSelect(id)}
+        onTabSelect = {(e) => onTabSelect(e, id)}
         isSelected  = {id === selectedId}
         className   = {styles.tab}
       />

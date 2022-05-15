@@ -5,6 +5,7 @@ import { restaurantSlice } from "./features/restaurant/module";
 import { reviewSlice } from "./features/review/module";
 import { userSlice } from "./features/user/module";
 import { productSlice } from "./features/menu/module";
+import { routeSlice } from "./features/custom-routing/module";
 
 const actionLogger = (store) => (next) => (action) => {
   console.log("action:", action);
@@ -17,11 +18,12 @@ const rootReducer = combineReducers({
   product: productSlice.reducer,
   review: reviewSlice.reducer,
   user: userSlice.reducer,
+  route: routeSlice.reducer
 });
 
 export const store = configureStore({
   reducer: rootReducer,
   middleware: (getDefaultMiddleware) =>
-    getDefaultMiddleware().concat().concat(actionLogger),
+    getDefaultMiddleware(), //.concat().concat(actionLogger),
   devTools: true,
 });

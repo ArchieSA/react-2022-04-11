@@ -18,7 +18,7 @@ export const Restaurant = ({ restaurant }) => {
           <ReviewsContainer restaurantId={restaurant.id} />
           <NewReviewContainer restaurantId={restaurant.id} />
         </div>
-        <BasketContainer className={styles.basket} />
+        {/* <BasketContainer className={styles.basket} /> */}
       </div>
     </div>
   );

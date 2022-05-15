@@ -1,4 +1,5 @@
 import { createSelector } from "reselect";
+import { selectRestaurantById } from "../../restaurant/module/selectors";
 
 export const selectReviewModuleState = (state) => state.review;
 
@@ -18,3 +19,6 @@ export const selectReviewIds = (state) => selectReviewModuleState(state).ids;
 
 export const selectIsReviewLoading = (state) =>
   selectReviewModuleState(state).isLoading;
+
+export const selectReviewIdsByRestaurantId = (state, restaurantId) =>
+  selectRestaurantById(state, { restaurantId }).reviews;

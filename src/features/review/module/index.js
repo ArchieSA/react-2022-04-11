@@ -21,17 +21,21 @@ export const reviewSlice = createSlice({
       state.isLoading = false;
       state.error = null;
 
-      state.ids = payload.map(({ id }) => id);
-      state.entities = payload.reduce((acc, entity) => {
-        acc[entity.id] = entity;
-        return acc;
-      }, {});
+      state.entities = {
+        ...state.entities,
+        ...payload.reduce((acc, entity) => {
+          acc[entity.id] = entity;
+          return acc;
+        }, {})
+      };
+      state.ids = Object.keys(state.entities);
     },
     addReview: (state, { payload }) => {
-      const newReview = { id: Date.now(), ...payload };
-
-      state.entities = { ...state.entities, [newReview.id]: payload };
-      state.ids = [...state.ids, newReview.id];
+      state.entities = {
+        ...state.entities,
+        [payload.id]: payload
+      };
+      state.ids = Object.keys(state.entities);
     }
   }
 });

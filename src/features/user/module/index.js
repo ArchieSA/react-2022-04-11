@@ -21,11 +21,24 @@ export const userSlice = createSlice({
       state.isLoading = false;
       state.error = null;
 
-      state.ids = payload.map(({ id }) => id);
-      state.entities = payload.reduce((acc, entity) => {
-        acc[entity.id] = entity;
-        return acc;
-      }, {});
+      state.entities = {
+        ...state.entities,
+        ...payload.reduce((acc, entity) => {
+          acc[entity.id] = entity;
+          return acc;
+        }, {})
+      };
+      state.ids = Object.keys(state.entities);
     },
+    addUser: (state, { payload }) => {
+      state.isLoading = false;
+      state.error = null;
+
+      state.entities = {
+        ...state.entities,
+        [payload.id]: payload
+      };
+      state.ids = Object.keys(state.entities);
+    }
   },
 });

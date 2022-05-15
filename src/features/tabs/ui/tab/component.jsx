@@ -1,13 +1,14 @@
-import classnames from "classnames";
-import styles from "./styles.module.scss";
+import { LinkContainer } from '../../../custom-routing/ui/link/container';
+import styles from './styles.module.scss';
+import cn from 'classnames';
 
-export const Tab = ({ label, onTabSelect, isSelected, className }) => (
-  <button
-    className={classnames(styles.root, className, {
-      [styles.selected]: isSelected,
-    })}
-    onClick={onTabSelect}
-  >
-    {label}
-  </button>
-);
+export const Tab = ({ label, onTabSelect, href, isSelected,  className }) => {
+  return(
+    <LinkContainer
+      href       = {href}
+      label      = {label}
+      className  = {cn(styles.root, {[styles.selected]: isSelected}, className)}
+      onClick    = {onTabSelect}
+    />
+  );
+};

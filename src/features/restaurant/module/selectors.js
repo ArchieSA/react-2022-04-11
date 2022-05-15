@@ -11,7 +11,7 @@ export const selectRestaurants = (state) =>
 
 export const selectRestaurantTabs = (state) =>
   Object.values(selectRestaurantModuleState(state).entities).map(
-    ({ name, id }) => ({ label: name, id })
+    ({ name, id }) => ({ label: name, id, href: `/restaurant/${id}` })
   );
 
 export const selectRestaurantRating = (state, restaurantId) => {
