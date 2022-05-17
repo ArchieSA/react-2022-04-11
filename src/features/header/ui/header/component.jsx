@@ -7,11 +7,16 @@ export const Header = () => (
     <Link to="/">
       <img src={Logo} className={styles.logo} alt="logo" />
     </Link>
-    <Link to="/restaurants" className={styles.link}>
-      Restaurants
-    </Link>
-    <Link to="/basket" className={styles.link}>
-      Basket
-    </Link>
+    <div>
+      <Link to="/restaurants" className={styles.link}>
+        Restaurants
+      </Link>
+      <Link to="/basket" className={styles.link}>
+        Basket
+      </Link>
+      <Link to="/products" className={styles.link}>
+        Products
+      </Link>
+    </div>
   </header>
 );

@@ -1,0 +1,11 @@
+.root {
+    border: 2px solid black;
+    padding: 16px;
+    border-radius: 4px;
+    font-size: 24px;
+}
+.row {
+    & + & {
+        margin-top: 15px;
+    }
+}

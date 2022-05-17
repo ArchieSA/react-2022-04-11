@@ -10,3 +10,6 @@ export const selectProductIds = (state) => selectProductModuleState(state).ids;
 
 export const selectIsProductsLoading = (state) =>
   selectProductModuleState(state).isLoading;
+
+export const selectProducts = (state) =>
+  Object.values(selectProductModuleState(state).entities);
