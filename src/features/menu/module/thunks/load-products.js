@@ -5,6 +5,25 @@ import { selectRestaurantProductsById } from "../../../restaurant/module/selecto
 export function loadProducts(restaurantId) {
   return function (dispatch, getState) {
     const productIds = selectProductIds(getState());
+
+    if(!restaurantId) {
+        if(productIds.length === 10) return; // такая микрооптимизация для нашего проекта, раз бэк уже не поменяется =)
+
+        dispatch(productSlice.actions.startLoading(null));
+
+        fetch("http://localhost:3001/api/products")
+          .then((response) => response.json())
+          .then((products) => {
+            dispatch(productSlice.actions.finishLoading(products));
+          })
+          .catch((error) => {
+            dispatch(productSlice.actions.failLoading(error));
+          });
+
+          return;
+    };
+
+
     const restaurantProducts = selectRestaurantProductsById(getState(), {
       restaurantId,
     });
