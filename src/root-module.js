@@ -4,6 +4,7 @@ import { restaurantReducer } from "./features/restaurant/module/reducer";
 import { productReducer } from "./features/menu/module/reducer";
 import { reviewReducer } from "./features/review/module/reducer";
 import { userReducer } from "./features/user/module/reducer";
+import { routeReducer } from "./features/route/module/reducer";
 
 const rootReducer = combineReducers({
   basket: basket,
@@ -11,6 +12,7 @@ const rootReducer = combineReducers({
   product: productReducer,
   review: reviewReducer,
   user: userReducer,
+  route: routeReducer,
 });
 
 export const store = createStore(rootReducer);

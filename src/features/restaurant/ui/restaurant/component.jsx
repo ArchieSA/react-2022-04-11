@@ -18,7 +18,6 @@ export const Restaurant = ({ restaurant, restaurantRate }) => {
           <Reviews reviewIds={restaurant.reviews} />
           <NewReviewContainer restaurantId={restaurant.id} />
         </div>
-        <BasketContainer className={styles.basket} />
       </div>
     </div>
   );

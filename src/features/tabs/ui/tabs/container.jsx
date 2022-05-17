@@ -1,20 +1,20 @@
-import { Tab } from "../tab/component";
-import styles from "./styles.module.scss";
-import { selectAllRestaurants } from "../../../restaurant/module/selectors";
 import { useSelector } from "react-redux";
+import { Link } from "../../../../components/link";
+import { selectAllRestaurants } from "../../../restaurant/module/selectors";
+import styles from "./styles.module.scss";
 
-export const TabsContainer = ({ tabIds, selectedId, onTabSelect }) => {
+export const TabsContainer = ({ tabIds, selectedId, onRestrauntSelect }) => {
   let tabs = useSelector(selectAllRestaurants);
   return (
     <div className={styles.root}>
       {tabs.map(({ name, id }) => (
-        <Tab
-          key={id}
+        <Link
           label={name}
-          onTabSelect={() => onTabSelect(id)}
-          isSelected={id === selectedId}
           className={styles.tab}
-        />
+          key={id}
+          isSelected={id === selectedId}
+          href={`/restraunts/${id}`}
+        ></Link>
       ))}
     </div>
   );
