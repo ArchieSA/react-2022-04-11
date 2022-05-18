@@ -6,7 +6,6 @@ import {
 } from "../../module/selectors";
 import { loadRestaurants } from "../../module/thunks/load-restarants";
 import { useEffect } from "react";
-import { loadUsers } from "../../../user/module/thunks/load-users";
 import { selectIsUsersLoading } from "../../../user/module/selectors";
 
 export const RestaurantsContainer = (props) => {
@@ -17,7 +16,6 @@ export const RestaurantsContainer = (props) => {
 
   useEffect(() => {
     dispatch(loadRestaurants());
-    dispatch(loadUsers());
   }, []);
 
   return isRestaurantLoading || isUsersLoading ? (
