@@ -10,6 +10,9 @@ export const Header = () => (
     <Link to="/restaurants" className={styles.link}>
       Restaurants
     </Link>
+    <Link to="/dishes" className={styles.link}>
+      Dishes
+    </Link>
     <Link to="/basket" className={styles.link}>
       Basket
     </Link>

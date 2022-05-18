@@ -22,11 +22,11 @@
     cursor: pointer;
     transition: 0.1s;
   }
-
+  
   margin-left: auto;
+  margin-right: 20px;
 
-  &:last-child {
+  &:not(:nth-child(-n+2)) {
     margin-left: 20px;
-    margin-right: 20px;
   }
 }
