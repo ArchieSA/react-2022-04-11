@@ -4,14 +4,21 @@ import { Link } from "react-router-dom";
 
 export const Header = () => (
   <header className={styles.root}>
-    <Link to="/">
-      <img src={Logo} className={styles.logo} alt="logo" />
-    </Link>
-    <Link to="/restaurants" className={styles.link}>
-      Restaurants
-    </Link>
-    <Link to="/basket" className={styles.link}>
-      Basket
-    </Link>
+    <div>
+      <Link to="/">
+        <img src={Logo} className={styles.logo} alt="logo" />
+      </Link>
+    </div>
+    <div>
+      <Link to="/restaurants" className={styles.link}>
+        Restaurants
+      </Link>
+      <Link to="/menu" className={styles.link}>
+        Menu
+      </Link>
+      <Link to="/basket" className={styles.link}>
+        Basket
+      </Link>
+    </div>
   </header>
 );

@@ -1,6 +1,6 @@
 .root {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   width: 100%;
   height: 60px;
@@ -23,10 +23,11 @@
     transition: 0.1s;
   }
 
-  margin-left: auto;
-
-  &:last-child {
-    margin-left: 20px;
-    margin-right: 20px;
-  }
+  margin-left: 20px;
+  margin-right: 20px;
+  //   margin-right: 20px;
+  // &:last-child {
+  //   margin-left: 20px;
+  //   margin-right: 20px;
+  // }
 }

@@ -12,6 +12,7 @@ import { RestaurantContainer } from "./features/restaurant/ui/restaurant/contain
 import { NotFoundPage } from "./pages/not-found/component";
 import { DefaultRestaurantPage } from "./pages/default-restaurant/component";
 import { NotAllowed } from "./pages/not-alowed/component";
+import { MenuPageContainer } from "./pages/menu/container";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
@@ -24,6 +25,7 @@ root.render(
             <Route index element={<DefaultRestaurantPage />} />
             <Route path={ROUTES.Restaurant} element={<RestaurantContainer />} />
           </Route>
+          <Route path={ROUTES.Menu} element={<MenuPageContainer />} />
           <Route path={ROUTES.Basket} element={<BasketPage />} />
         </Route>
         <Route path={ROUTES.NotAllowed} element={<NotAllowed />} />

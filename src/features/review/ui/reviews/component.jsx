@@ -6,11 +6,7 @@ export const Reviews = ({ reviewIds }) => (
   <div>
     {reviewIds.length &&
       reviewIds.map((reviewId) => (
-        <ReviewContainer
-          key={reviewId}
-          reviewId={reviewId}
-          className={styles.review}
-        />
+        <ReviewContainer key={reviewId} reviewId={reviewId} className={styles.review} />
       ))}
   </div>
 );

@@ -9,9 +9,7 @@ export const ProductContainer = ({ productId, ...props }) => {
   const dispatch = useDispatch();
   const count = useSelector((state) => selectProductCount(state, productId));
 
-  const productName = useSelector((state) =>
-    selectProductNameById(state, productId)
-  );
+  const productName = useSelector((state) => selectProductNameById(state, productId));
 
   const decrement = useCallback(() => {
     dispatch(basketSlice.actions.removeProduct(productId));

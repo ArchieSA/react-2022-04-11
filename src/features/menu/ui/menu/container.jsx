@@ -1,4 +1,4 @@
-import { Menu } from "./component";
+import { RestrauntMenu, Menu } from "./component";
 import { useDispatch, useSelector } from "react-redux";
 import { selectIsProductsLoading } from "../../module/selectors";
 import { loadProducts } from "../../module/thunks/load-products";
@@ -12,5 +12,11 @@ export const MenuContainer = ({ restaurantId, ...props }) => {
     dispatch(loadProducts(restaurantId));
   }, [restaurantId]);
 
-  return isProductsLoading ? <span>Loading</span> : <Menu {...props} />;
+  return isProductsLoading ? (
+    <span>Loading</span>
+  ) : restaurantId ? (
+    <RestrauntMenu {...props} />
+  ) : (
+    <Menu {...props} />
+  );
 };
