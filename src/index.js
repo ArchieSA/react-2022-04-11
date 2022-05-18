@@ -1,6 +1,6 @@
 import React from "react";
-import ReactDOM from "react-dom/client";
 import { Provider } from "react-redux";
+import { createRoot } from 'react-dom/client';
 import "./index.css";
 import { store } from "./root-module";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
@@ -14,7 +14,7 @@ import { DefaultRestaurantPage } from "./pages/default-restaurant/component";
 import { NotAllowed } from "./pages/not-alowed/component";
 import { DishListContainer } from "./features/dishes/ui/dish-list/container";
 
-const root = ReactDOM.createRoot(document.getElementById("root"));
+const root = createRoot(document.getElementById("root"));
 
 root.render(
   <Provider store={store}>

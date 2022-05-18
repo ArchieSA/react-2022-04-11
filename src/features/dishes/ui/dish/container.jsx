@@ -16,7 +16,6 @@ export const DishContainer = ({ productId }) => {
     );
 
     return (<Dish
-        key={productId}
         productName={productName}
         productPrice={productPrice}
         productIngredients={productIngredients}

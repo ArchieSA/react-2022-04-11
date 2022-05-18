@@ -7,6 +7,15 @@ import { MenuContainer } from "../../../menu/ui/menu/container";
 import { ReviewsContainer } from "../../../review/ui/reviews/container";
 
 export const Restaurant = ({ restaurant }) => {
+  // const restaurantRate = useMemo(
+  //   () =>
+  //     Math.ceil(
+  //       restaurant.reviews.reduce((prev, curr) => prev + curr.rating, 0) /
+  //         restaurant.reviews.length
+  //     ),
+  //   [restaurant.reviews]
+  // );
+
   return (
     <div className={styles.root}>
       <div className={styles.mainInfo}>

@@ -7,7 +7,7 @@ export const DishList = ({ productIds, className }) => {
     return (
         <div className={classnames(styles.root, className)}>
             <div className={styles.dishesTitle}>Products List</div>
-            {productIds.map(productId => <DishContainer productId={productId} />)}
+            {productIds.map(productId => <DishContainer key={productId} productId={productId} />)}
         </div>
     );
 }
