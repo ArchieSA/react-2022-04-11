@@ -4,5 +4,7 @@ import { selectUserById } from "../../module/selectors";
 
 export const UserContainer = ({ userId, ...props }) => {
   const user = useSelector((state) => selectUserById(state, { userId }));
-  return <User {...props} userName={user.name} />;
+  return <User {...props} userName={user} />;
 };
+
+//user.name

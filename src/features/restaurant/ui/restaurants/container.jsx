@@ -12,10 +12,10 @@ export const RestaurantsContainer = (props) => {
   const restaurantIds = useSelector(selectRestaurantIds);
   const isLoading = useSelector(selectIsRestaurantsLoading);
 
-  useEffect(() => {
-    dispatch(loadRestaurants());
-  }, []);
-
+    useEffect(() => {
+      dispatch(loadRestaurants());
+    }, []);
+ 
   return isLoading ? (
     <span>Loading</span>
   ) : (

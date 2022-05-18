@@ -1,10 +1,10 @@
 import React from "react";
 import { useSelector } from "react-redux";
-import { selectReviewById } from "../../module/selectors";
 import { Review } from "./component";
+import { selectReviewById } from '../../../review/module/selectors';
 
 export const ReviewContainer = ({ reviewId, ...props }) => {
-  const review = useSelector((state) => selectReviewById(state, { reviewId }));
+   const review = useSelector((state) => selectReviewById(state, { reviewId }));
   return (
     <Review
       {...props}

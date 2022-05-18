@@ -4,7 +4,7 @@ import { selectRestaurantIds } from "../selectors";
 export function loadRestaurants() {
   return function (dispatch, getState) {
     const restaurantIds = selectRestaurantIds(getState());
-
+    
     if (restaurantIds?.length) {
       return;
     }

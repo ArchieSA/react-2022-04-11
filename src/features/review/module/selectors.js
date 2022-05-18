@@ -17,3 +17,6 @@ export const selectReviewByIds = (state, reviewIds) =>
   );
 
 export const selectReviewIds = (state) => selectReviewModuleState(state).ids;
+
+  export const selectIsReviewsLoading = (state) =>
+  selectReviewModuleState(state).isLoading;

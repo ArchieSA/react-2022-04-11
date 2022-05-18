@@ -14,14 +14,14 @@ export const selectRestaurantTabs = (state) =>
     ({ name, id }) => ({ label: name, id })
   );
 
-export const selectRestaurantRating = (state, restaurantId) => {
-  const restaurant = selectRestaurantById(state, { restaurantId });
-  const reviews = selectReviewByIds(state, restaurant.reviews);
-
-  return Math.ceil(
-    reviews.reduce((prev, curr) => prev + curr.rating, 0) / reviews.length
-  );
-};
+ export const selectRestaurantRating = (state, restaurantId) => {
+  //  const restaurant = selectRestaurantById(state, { restaurantId });
+  //  const reviews = selectReviewByIds(state, restaurant.reviews);
+   
+  //    return Math.ceil(
+  //      reviews.reduce((prev, curr) => prev + curr.rating, 0) / reviews.length
+  //    );
+ };
 
 export const selectRestaurantIds = createSelector(
   [selectRestaurantModuleState],
