@@ -3,4 +3,5 @@ export const ROUTES = {
   Restaurant: ":restaurantId",
   Basket: "basket",
   NotAllowed: "not-allowed",
+  Products: "products"
 };
