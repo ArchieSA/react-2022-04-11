@@ -20,7 +20,13 @@
 .link {
   color: white;
   margin: 0 8px;
+  text-decoration: none;
+  
+  &:last-child {
+    margin-right: 24px
+  }
   &:hover {
     text-decoration: underline;
+    opacity: 0.8;
   }
 }
