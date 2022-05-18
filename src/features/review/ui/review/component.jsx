@@ -1,8 +1,11 @@
 import React from "react";
 import classnames from "classnames";
+import { connect } from "react-redux";
+
 import { Rate } from "../../../rate/ui/rate/component";
-import styles from "./styles.module.scss";
 import { UserContainer } from "../../../user/ui/user/container";
+
+import styles from "./styles.module.scss";
 
 export const Review = ({ userId, text, rating, className }) => {
   return (
@@ -15,3 +18,19 @@ export const Review = ({ userId, text, rating, className }) => {
     </div>
   );
 };
+
+// const createMapStateToProps = (state, { reviewId }) => {
+//   const selectReviewById = createSelectReviewById();
+//
+//   return () => {
+//     const { userId, text, rating } = selectReviewById(state, { reviewId });
+//
+//     return {
+//       userId,
+//       text,
+//       rating,
+//     };
+//   };
+// };
+//
+// export default connect(createMapStateToProps)(Review);

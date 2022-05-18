@@ -1,14 +1,22 @@
-import classnames from "classnames";
-import { ProductContainer } from "../product/container";
-import styles from "./styles.module.scss";
+import { RestrauntMenu, Menu } from "./component";
+import { useDispatch, useSelector } from "react-redux";
+import { selectIsProductsLoading } from "../../module/selectors";
+import { loadProducts } from "../../module/thunks/load-products";
+import { useEffect } from "react";
 
-export const MenuContainer = ({ productIds, className }) => {
-  return (
-    <div className={classnames(styles.root, className)}>
-      <span className={styles.menuTitle}>Menu</span>
-      {productIds.map((productId) => (
-        <ProductContainer key={productId} productId={productId} className={styles.product} />
-      ))}
-    </div>
+export const MenuContainer = ({ restaurantId, ...props }) => {
+  const dispatch = useDispatch();
+  const isProductsLoading = useSelector(selectIsProductsLoading);
+
+  useEffect(() => {
+    dispatch(loadProducts(restaurantId));
+  }, [restaurantId]);
+
+  return isProductsLoading ? (
+    <span>Loading</span>
+  ) : restaurantId ? (
+    <RestrauntMenu {...props} />
+  ) : (
+    <Menu {...props} />
   );
 };

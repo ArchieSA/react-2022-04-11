@@ -3,14 +3,18 @@ import { BasketItemContainer } from "../basket-item/container";
 
 import styles from "./styles.module.scss";
 
-export const Basket = ({ products, onClearBasket, className }) => {
+export const Basket = ({ productIds, onClearBasket, className }) => {
   return (
     <div className={classnames(styles.root, className)}>
       <span className={styles.title}>Basket</span>
       <div className={styles.products}>
-        {products?.length > 0 ? (
-          products.map(({ id, count }) => (
-            <BasketItemContainer productId={id} count={count} key={id} className={styles.product} />
+        {productIds?.length > 0 ? (
+          productIds.map((productId) => (
+            <BasketItemContainer
+              productId={productId}
+              key={productId}
+              className={styles.product}
+            />
           ))
         ) : (
           <span>Empty</span>
@@ -19,7 +23,7 @@ export const Basket = ({ products, onClearBasket, className }) => {
       <button
         onClick={onClearBasket}
         className={styles.clearAction}
-        disabled={products?.length <= 0}
+        disabled={productIds?.length <= 0}
       >
         Clear
       </button>

@@ -1,16 +1,24 @@
 import Logo from "./img/logo.svg";
 import styles from "./styles.module.scss";
-import { Link } from "../../../../components/link/index";
-import { ThemeContext } from "../../../theme/context";
-import { useContext } from "react";
+import { Link } from "react-router-dom";
 
-export const Header = () => {
-  const theme = useContext(ThemeContext);
-
-  return (
-    <header className={styles.root}>
-      <img src={Logo} className={styles.logo} alt="logo" />
-      <Link label={"Basket"} href={"/basket"} />
-    </header>
-  );
-};
+export const Header = () => (
+  <header className={styles.root}>
+    <div>
+      <Link to="/">
+        <img src={Logo} className={styles.logo} alt="logo" />
+      </Link>
+    </div>
+    <div>
+      <Link to="/restaurants" className={styles.link}>
+        Restaurants
+      </Link>
+      <Link to="/menu" className={styles.link}>
+        Menu
+      </Link>
+      <Link to="/basket" className={styles.link}>
+        Basket
+      </Link>
+    </div>
+  </header>
+);
