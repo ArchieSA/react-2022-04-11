@@ -1,0 +1,31 @@
+.menu-item{
+    list-style: none;
+    padding: 1rem;
+    border: 1px solid #888;
+    border-radius: 4px;
+    margin-bottom: 10px;
+    &__name{
+        font-weight: 700;
+        margin-bottom: 10px;
+    }
+}
+.menu-wrapper{
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start
+}
+.menu-ingredients{
+    display: flex;
+    margin-top: 10px;
+}
+.menu-ingredient{
+    margin-right: 10px;
+    &::after{
+        content: ','
+    }
+    &:last-of-type::after{
+        content: ''
+    }
+}
