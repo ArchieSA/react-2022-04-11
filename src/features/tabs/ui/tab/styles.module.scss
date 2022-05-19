@@ -8,13 +8,13 @@
   cursor: pointer;
   
   &.selected {
-    border-bottom: 1px solid black;
-    padding-bottom: 9px;
+    border-bottom: 2px solid black;
+    padding-bottom: 8px;
   }
 
   &:hover {
-    border-bottom: 2px solid black;
-    padding-bottom: 8px;
+    border-bottom: 1px solid black;
+    padding-bottom: 9px;
   }
 
 }

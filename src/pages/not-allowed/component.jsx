@@ -3,13 +3,13 @@ import { Link } from "react-router-dom";
 import { ROUTES } from "../../consts/routes";
 import styles from './styles.module.scss';
 
-export const NotFoundPage = () => {
+export const NotAllowedPage = () => {
 
   return (
     <div className={styles.root}>
-      <div>Page not found</div>
+      <div>Not permision</div>
       <Link
-        to={ROUTES.Restaurants}
+        to={`/${ROUTES.Restaurants}`}
         className={styles.link}
       >
         Go main
