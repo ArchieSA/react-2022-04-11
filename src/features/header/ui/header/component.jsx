@@ -13,5 +13,8 @@ export const Header = () => (
     <Link to="/basket" className={styles.link}>
       Basket
     </Link>
+    <Link to="/basket" className={styles.link}>
+      Products
+    </Link>
   </header>
 );

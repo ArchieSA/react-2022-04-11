@@ -5,6 +5,8 @@ import { selectRestaurantProductsById } from "../../../restaurant/module/selecto
 export function loadProducts(restaurantId) {
   return function (dispatch, getState) {
     const productIds = selectProductIds(getState());
+
+
     const restaurantProducts = selectRestaurantProductsById(getState(), {
       restaurantId,
     });
