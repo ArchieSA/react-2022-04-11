@@ -5,7 +5,7 @@ import { ROUTES } from "../../../consts/routes";
 export const selectRestaurantModuleState = (state) => state.restaurant;
 
 export const selectRestaurantById = (state, payload) =>
-  selectRestaurantModuleState(state).entities[payload.restaurantId];
+  selectRestaurantModuleState(state).entities?.[payload?.restaurantId];
 
 export const selectRestaurants = (state) =>
   Object.values(selectRestaurantModuleState(state).entities);
@@ -17,10 +17,10 @@ export const selectRestaurantTabs = (state) =>
 
 export const selectRestaurantRating = (state, restaurantId) => {
   const restaurant = selectRestaurantById(state, { restaurantId });
-  const reviews = selectReviewByIds(state, restaurant.reviews);
+  const reviews = selectReviewByIds(state, restaurant?.reviews);
 
   return Math.ceil(
-    reviews?.reduce((prev, curr) => prev + curr?.rating, 0) / reviews.length
+    reviews?.reduce((prev, curr) => prev + curr?.rating, 0) / reviews?.length
   );
 };
 

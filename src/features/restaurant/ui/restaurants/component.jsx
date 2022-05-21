@@ -3,7 +3,7 @@ import { RestaurantTabsContainer } from '../restaurant-tabs/container';
 
 
 export const Restaurants = ({ restaurantIds }) => {
-
+  
   if (!restaurantIds?.length) {
     return null;
   }

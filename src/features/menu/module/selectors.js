@@ -20,5 +20,8 @@ export const selectProductIdsByRestaurantId = (state, restaurantId) =>
 export const selectIsProductsByRestaurantId = (state, restaurantId) => {
   const ids = selectProductIdsByRestaurantId(state, restaurantId);
 
-  return Boolean(selectProductModuleState(state).entities?.[ids[0]]);
+  return Boolean(selectProductModuleState(state).entities?.[ids?.[0]]);
 };
+
+export const selecAllMenu = (state) => 
+  Object.values(selectProductModuleState(state).entities)

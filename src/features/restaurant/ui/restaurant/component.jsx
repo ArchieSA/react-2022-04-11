@@ -1,11 +1,12 @@
 import { MenuContainer } from "../../../menu/ui/menu/container";
-import { BasketContainer } from "../../../basket/ui/basket/container";
 import { ReviewsContainer } from "../../../review/ui/reviews/container";
 import { NewReviewContainer } from "../../../review/ui/new-review/container";
 import { RestaurantRatingContainer } from "../restaurant-rating/container";
 import styles from './styles.module.scss';
 
+
 export const Restaurant = ({ restaurant }) => {
+
   return (
     <div className={styles.root}>
       <div className={styles.mainInfo}>
@@ -18,7 +19,6 @@ export const Restaurant = ({ restaurant }) => {
           <ReviewsContainer restaurantId={restaurant.id} />
           <NewReviewContainer restaurantId={restaurant.id} />
         </div>
-        {/* <BasketContainer className={styles.basket} /> */}
       </div>
     </div>
   );
