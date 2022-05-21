@@ -26,26 +26,26 @@ describe('Test <Tab />', () => {
   });
 
 
-  // it('should correct render button click', () => {
-  //   const funcMock = jest.fn();
+  it('should correct render button click', () => {
+    const funcMock = jest.fn();
 
-  //   render(
-  //     <MemoryRouter>
-  //       <Provider store={mockStore}>
-  //         <Tab label='Some restaurant' href={`/path`} />
-  //       </Provider>
-  //     </MemoryRouter>
-  //   );
+    render(
+      <MemoryRouter>
+        <Provider store={mockStore}>
+          <Tab label='Some restaurant' href={`/path`} />
+        </Provider>
+      </MemoryRouter>
+    );
 
-  //   const buttonEl = screen.getByText(/some restaurant/i);
+    const buttonEl = screen.getByText(/some restaurant/i);
 
-  //   fireEvent(
-  //     buttonEl,
-  //     new MouseEvent('click', { bubbles: true, cancelable: true })
-  //   );
+    fireEvent(
+      buttonEl,
+      new MouseEvent('click', { bubbles: true, cancelable: true })
+    );
 
-  //   expect(funcMock).toHaveBeenCalledTimes(1);
-  // });
+    expect(funcMock).toHaveBeenCalledTimes(1);
+  });
 });
 
 // npm run test tab.test.jsx
