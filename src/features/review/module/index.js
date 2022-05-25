@@ -22,12 +22,14 @@ export const reviewSlice = createSlice({
     finishLoading: (state, {payload})=> {
      state.isLoading = false;
      state.error = null;
-
-     state.ids = payload.map(({ id }) => id);
-      state.entities = payload.reduce((acc, entity) => {
-        acc[entity.id] = entity;
-        return acc;
-      }, {});
+     
+      state.ids = payload.map(({ id }) => id);
+      state.entities = {...state.entities,
+        ...payload.reduce((acc, entity) => {
+          acc[entity.id] = entity;
+          return acc;
+        }, {}),
+      };
     },
   },
 });

@@ -45,7 +45,7 @@ export const NewReview = ({ onSubmit }) => {
       </div>
       <div className={styles.formElement}>
         <span className={styles.elementTitle}>Rating</span>
-        <input
+        <input disabled={state.rating<0}
           value={state.rating}
           type="number"
           onChange={(event) => {
